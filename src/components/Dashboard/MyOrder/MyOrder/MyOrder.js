@@ -4,9 +4,9 @@ import React from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
 import Swal from 'sweetalert2';
-import useAuth from '../../../hooks/useAuth';
-import Loading from '../../Loading/Loading';
-import SingleOrder from './SingleOrder/SingleOrder';
+import useAuth from '../../../../hooks/useAuth';
+import Loading from '../../../Loading/Loading';
+import SingleOrder from '../SingleOrder/SingleOrder';
 
 const MyOrder = () => {
 
@@ -23,7 +23,6 @@ const MyOrder = () => {
                 let result = await fetch(`https://fierce-lake-75301.herokuapp.com/allOrders?email=${email}`);
                 result = await result.json();
                 setMyOrder(result)
-                console.log('myOrder', myOrder);
             }
             callApi();
 
@@ -71,7 +70,7 @@ const MyOrder = () => {
         <div>
             <h1>My Order</h1>
             <p>user {email} have {myOrder?.length} order</p>
-            <p>Phone Number {userPhoneNumber}</p>
+            <p>Phone Number: {userPhoneNumber}</p>
 
             <div className="table-responsive">
 

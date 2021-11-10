@@ -1,7 +1,7 @@
 import React from 'react';
 
 import AddReview from '../AddReview/AddReview';
-import MyOrder from '../MyOrder/MyOrder';
+import MyOrder from '../MyOrder/MyOrder/MyOrder';
 import Payment from '../Payment/Payment';
 import './Dashboard.css';
 
@@ -12,7 +12,7 @@ import {
     Link,
     useRouteMatch
 } from "react-router-dom";
-import ManageAllOrders from '../ManageAllOrders/ManageAllOrders';
+import ManageAllOrders from '../ManageAllOrders/ManageAllOrders/ManageAllOrders';
 import AddProduct from '../AddProduct/AddProduct';
 import MakeAdmin from '../MakeAdmin/MakeAdmin';
 import useAuth from '../../../hooks/useAuth';
