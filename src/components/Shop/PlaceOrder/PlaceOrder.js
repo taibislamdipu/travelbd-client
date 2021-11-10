@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useParams } from 'react-router';
 import useAuth from '../../../hooks/useAuth';
+import Loading from '../../Loading/Loading';
 
 const PlaceOrder = () => {
 
@@ -66,9 +67,17 @@ const PlaceOrder = () => {
                 </div>
 
                 <div className="col-md-6">
-                    <div>
-                        <img src={products?.image} className="img-fluid" alt="" />
-                    </div>
+                    {
+                        !products?.image ?
+
+                            <Loading></Loading>
+
+                            :
+
+                            <div>
+                                <img src={products?.image} className="img-fluid" alt="" />
+                            </div>
+                    }
                     <div className="text-center">
                         <h2>{products?.name}</h2>
                         <h4>$ {products?.price}</h4>

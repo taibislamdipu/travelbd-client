@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
 import { Link } from 'react-router-dom';
+import Loading from '../../Loading/Loading';
 
 const Product = () => {
 
@@ -29,9 +30,17 @@ const Product = () => {
 
             <div className="row my-5">
                 <div className="col-md-6">
-                    <div>
-                        <img src={products?.image} className="img-fluid" alt="" />
-                    </div>
+                    {
+                        !products.image ?
+
+                            <Loading></Loading>
+
+                            :
+
+                            <div>
+                                <img src={products?.image} className="img-fluid" alt="" />
+                            </div>
+                    }
                 </div>
                 <div className="col-md-6">
                     <h2>{products?.name}</h2>
