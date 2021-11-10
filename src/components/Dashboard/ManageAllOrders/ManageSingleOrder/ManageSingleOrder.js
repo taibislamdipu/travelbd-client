@@ -1,12 +1,40 @@
 import { faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
+import { useState } from 'react';
+import { useForm } from 'react-hook-form';
 import Swal from 'sweetalert2';
 
 const ManageSingleOrder = (props) => {
 
+    const { _id, image, productName, price, address, status, phone, email } = props.singleOrder;
 
-    const { _id, image, productName, price, address, status, phone } = props.singleOrder;
+    // const [orders, setOrders] = useState([]);
+    const { register, handleSubmit } = useForm();
+
+    const [newStatus, setNewStatus] = useState("");
+    const [orderId, setOrderId] = useState("");
+
+
+    const handleOrderId = (id) => {
+        setOrderId(id);
+        console.log(id);
+    };
+
+    const onSubmit = (data) => {
+        console.log(data, orderId);
+        fetch(`https://fierce-lake-75301.herokuapp.com/statusUpdate/${orderId}`, {
+            method: "PUT",
+            headers: { "content-type": "application/json" },
+            body: JSON.stringify(data),
+        })
+            .then((res) => res.json())
+            .then((result) => {
+                if (result.modifiedCount === 1) {
+                    alert('status updated successfully');
+                }
+            });
+    };
 
 
     const handleDelete = () => {
@@ -48,14 +76,31 @@ const ManageSingleOrder = (props) => {
     return (
         <tbody>
             <tr>
-                {/* <td>{index}</td> */}
+                {/* <td>{e}</td> */}
                 <td>
                     <img src={image} height={100} alt="" />
                 </td>
                 <td>{productName}</td>
                 <td>{price}</td>
-                <td>{address}</td>
-                <td>{status}</td>
+                <td>
+                    <p>{address}</p>
+                    <p>Email: {email}</p>
+                    <p>Phone: {phone}</p>
+                </td>
+                {/* <td>{status}</td> */}
+                <td>
+                    <form onSubmit={handleSubmit(onSubmit)}>
+                        <select
+                            onClick={() => handleOrderId(_id)}
+                            {...register("newStatus")}
+                        >
+                            <option value={status}>{status}</option>
+                            <option value="Approve">Approve</option>
+                            <option value="Done">Done</option>
+                        </select>
+                        <input type="submit" />
+                    </form>
+                </td>
                 <td>
                     <button className="btn " onClick={() => handleDelete()}>
                         <FontAwesomeIcon icon={faTrashAlt} />

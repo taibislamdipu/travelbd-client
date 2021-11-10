@@ -12,7 +12,7 @@ const ManageAllOrders = () => {
     useEffect(() => {
         try {
             async function callApi() {
-                let results = await fetch('http://localhost:5000/allOrders');
+                let results = await fetch('https://fierce-lake-75301.herokuapp.com/allOrders');
                 results = await results.json();
                 setAllOrders(results)
             }
@@ -55,7 +55,6 @@ const ManageAllOrders = () => {
                             {
                                 allOrders.map((singleOrder) => <ManageSingleOrder
                                     singleOrder={singleOrder}
-
                                 >
 
                                 </ManageSingleOrder>)

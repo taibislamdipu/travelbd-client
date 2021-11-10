@@ -9,8 +9,6 @@ const SingleOrder = (props) => {
     console.log(props.singleOrder);
 
     const { _id, image, productName, price, address, status, phone } = props.singleOrder;
-    const { index } = props.index;
-    console.log('id', _id);
 
     const { setUserPhoneNumber } = useAuth();
 
@@ -56,7 +54,6 @@ const SingleOrder = (props) => {
 
         <tbody>
             <tr>
-                {/* <td>{index}</td> */}
                 <td>
                     <img src={image} height={100} alt="" />
                 </td>

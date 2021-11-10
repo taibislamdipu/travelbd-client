@@ -65,12 +65,12 @@ const PlaceOrder = () => {
                     <form className="mt-5" onSubmit={handleSubmit(onSubmit)}>
 
                         <div className="form-floating mb-3">
-                            {displayName && <input className="form-control" defaultValue={displayName} {...register("name")} required />}
+                            {displayName && <input className="form-control" value={displayName} {...register("name")} required />}
                             <label>Your name</label>
                         </div>
 
                         <div className="form-floating mb-3">
-                            {email && <input className="form-control" defaultValue={email} {...register("email")} required />}
+                            {email && <input className="form-control" value={email} {...register("email")} required />}
                             <label>Email</label>
                         </div>
 

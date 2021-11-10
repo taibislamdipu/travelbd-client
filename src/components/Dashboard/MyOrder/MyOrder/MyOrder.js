@@ -20,7 +20,7 @@ const MyOrder = () => {
     useEffect(() => {
         try {
             async function callApi() {
-                let result = await fetch(`https://fierce-lake-75301.herokuapp.com/allOrders?email=${email}`);
+                let result = await fetch(`https://fierce-lake-75301.herokuapp.com/myOrders?email=${email}`);
                 result = await result.json();
                 setMyOrder(result)
             }
@@ -45,7 +45,7 @@ const MyOrder = () => {
     //     }).then((result) => {
     //         if (result.isConfirmed) {
 
-    //             const url = `http://localhost:5000/allUserOrders/${myOrder?._id}`
+    //             const url = `https://fierce-lake-75301.herokuapp.com/allUserOrders/${myOrder?._id}`
     //             fetch(url, {
     //                 method: 'DELETE'
     //             })
@@ -96,9 +96,9 @@ const MyOrder = () => {
                             </thead>
 
                             {
-                                myOrder.map((singleOrder, index) => <SingleOrder
+                                myOrder.map((singleOrder) => <SingleOrder
                                     singleOrder={singleOrder}
-                                    index={index}
+
                                 >
 
                                 </SingleOrder>)
