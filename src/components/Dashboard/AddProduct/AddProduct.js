@@ -32,28 +32,24 @@ const AddProduct = () => {
             <h1>Add Product</h1>
 
             <div className="col-md-6">
-
-
-
                 <form className="mt-5" onSubmit={handleSubmit(onSubmit)}>
-
-                    <div class="form-floating mb-3">
-                        <input class="form-control"   {...register("name")} placeholder="Name" required />
+                    <div className="form-floating mb-3">
+                        <input className="form-control"   {...register("name")} placeholder="Name" required />
                         <label>Product Name</label>
                     </div>
-                    <div class="form-floating mb-3">
-                        <input class="form-control"  {...register("price")} placeholder="Price" required />
+                    <div className="form-floating mb-3">
+                        <input className="form-control"  {...register("price")} placeholder="Price" required />
                         <label>Price</label>
                     </div>
 
-                    <div class="form-floating mb-3">
-                        <input class="form-control"  {...register("description")} placeholder="Description" required />
+                    <div className="form-floating mb-3">
+                        <input className="form-control"  {...register("description")} placeholder="Description" required />
                         <label>Description</label>
                     </div>
 
 
-                    <div class="form-floating mb-3">
-                        <input class="form-control"  {...register("image")} placeholder="Image" required />
+                    <div className="form-floating mb-3">
+                        <input className="form-control"  {...register("image")} placeholder="Image" required />
                         <label>Product Image</label>
                     </div>
 
