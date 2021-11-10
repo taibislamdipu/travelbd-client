@@ -1,0 +1,8 @@
+
+
+.hero-section{
+    height: 500px;
+    background: url(../../../images/hero-bg.jpg) no-repeat center center fixed;
+    background-size: cover;
+   
+}
