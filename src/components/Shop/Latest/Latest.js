@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import Loading from '../../Loading/Loading';
 
 const Latest = () => {
 
@@ -26,29 +27,36 @@ const Latest = () => {
         <div className="container">
             <h2 className="text-center my-5">The Latest</h2>
 
-            <div class="row row-cols-1 row-cols-md-3 g-4">
+            {
+                products.length === 0 ?
 
-                {
-                    products.map(pd => <div class="col">
-                        <div class="card h-100">
-                            <img src={pd?.image} class="card-img-top" alt="..." />
-                            <div class="card-body">
-                                <h5 class="card-title">{pd?.name}</h5>
-                                <p>${pd?.price}</p>
-                                <div className="card-footer">
-                                    <Link to={`/product/${pd?._id}`}>
-                                        <button className="btn btn-primary">
-                                            Buy Now
-                                        </button>
-                                    </Link>
+                    <Loading></Loading>
+
+                    :
+
+                    <div class="row row-cols-1 row-cols-md-3 g-4">
+
+                        {
+                            products.map(pd => <div class="col">
+                                <div class="card h-100">
+                                    <img src={pd?.image} class="card-img-top" alt="..." />
+                                    <div class="card-body">
+                                        <h5 class="card-title">{pd?.name}</h5>
+                                        <p>${pd?.price}</p>
+                                        <div className="card-footer">
+                                            <Link to={`/product/${pd?._id}`}>
+                                                <button className="btn btn-primary">
+                                                    Buy Now
+                                                </button>
+                                            </Link>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
-                    </div>)
-                }
+                            </div>)
+                        }
 
-
-            </div>
+                    </div>
+            }
 
         </div>
     );
