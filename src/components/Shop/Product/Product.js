@@ -26,8 +26,6 @@ const Product = () => {
 
     return (
         <div className="container">
-            <h2 className="text-center py-5">Place Order of {productId}</h2>
-
             <div className="row my-5">
                 <div className="col-md-6">
                     {
@@ -53,7 +51,7 @@ const Product = () => {
             <div>
                 <h2>Description</h2>
                 <p>
-                    {products?.desc}
+                    {products?.description}
                 </p>
             </div>
 

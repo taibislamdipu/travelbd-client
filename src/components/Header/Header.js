@@ -4,6 +4,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
 import logo from '../../images/logo.png';
+import './Header.css';
 
 const Header = () => {
 
@@ -124,7 +125,7 @@ const Header = () => {
                                         <li className="nav-item menu-bg mt-4">
                                             <Link to="/myBooking" className="react-router-link">
                                                 <button type="button" className="btn nav-link text-secondary fw-bold position-relative">
-                                                    <FontAwesomeIcon icon={faLocationArrow} /> MY BOOKING
+                                                    <FontAwesomeIcon icon={faLocationArrow} /> My Order
                                                     <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
                                                         {/* {myBooking?.length} */}
                                                     </span>
@@ -134,14 +135,14 @@ const Header = () => {
 
                                         <li className="nav-item menu-bg">
                                             <Link to="/addPackage" className="nav-link fw-bold">
-                                                <FontAwesomeIcon icon={faPlus} /> Add Package
+                                                <FontAwesomeIcon icon={faPlus} /> Add Review
                                             </Link>
                                         </li>
 
                                         <li className="nav-item menu-bg">
                                             <Link to="/allBooking" className="react-router-link">
                                                 <button className="btn nav-link text-secondary fw-bold position-relative">
-                                                    <FontAwesomeIcon icon={faListUl} /> ALL BOOKING
+                                                    <FontAwesomeIcon icon={faListUl} /> Add Payment
                                                     <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
                                                         {/* {allBooking?.length} */}
                                                     </span>

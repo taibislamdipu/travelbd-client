@@ -9,10 +9,11 @@ const AddReview = () => {
     const { user } = useAuth();
     const { displayName, email } = user;
 
+
     const { register, handleSubmit, watch, formState: { errors }, reset } = useForm();
 
     const onSubmit = data => {
-        axios.post(' https://fierce-lake-75301.herokuapp.com/addReview', data)
+        axios.post('https://fierce-lake-75301.herokuapp.com/addReview', data)
             .then(res => {
                 if (res.data.insertedId) {
 
@@ -32,7 +33,7 @@ const AddReview = () => {
     return (
         <div className="container">
             <div>
-                <h1>Please add review</h1>
+                <h1>Add review</h1>
 
                 <div className="col-md-6">
                     <form className="mt-5" onSubmit={handleSubmit(onSubmit)}>

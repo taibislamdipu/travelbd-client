@@ -17,7 +17,7 @@ const Review = () => {
     useEffect(() => {
         try {
             async function callApi() {
-                let results = await fetch('../reviews.json');
+                let results = await fetch('http://localhost:5000/reviews');
                 results = await results.json();
                 setUserReview(results);
                 console.log(results);
@@ -36,18 +36,18 @@ const Review = () => {
 
                 <Slider {...settings}>
                     {
-                        userReview.map(rv => <div >
-                            <h4 className="fw-bold text-uppercase ">Lalaine</h4>
+                        userReview.map(review => <div >
+                            <h4 className="fw-bold text-uppercase ">{review?.name}</h4>
                             <div className="star-rating">
                                 <Rating
-                                    initialRating={rv?.rating}
+                                    initialRating={review?.rating}
                                     emptySymbol="far fa-star"
                                     fullSymbol="fas fa-star"
                                     readonly
                                 />
                             </div>
                             <p className="fs-5 col-md-6 mx-auto review">
-                                {rv?.review}
+                                {review?.review}
                             </p>
                         </div>)
                     }
