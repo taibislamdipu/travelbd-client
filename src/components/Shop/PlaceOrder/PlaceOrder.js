@@ -18,7 +18,7 @@ const PlaceOrder = () => {
     useEffect(() => {
         try {
             async function callApi() {
-                let results = await fetch('http://localhost:5000/products');
+                let results = await fetch('https://fierce-lake-75301.herokuapp.com/products');
                 results = await results.json();
                 results = await results.find(pd => pd?._id === productId);
                 setProducts(results);
