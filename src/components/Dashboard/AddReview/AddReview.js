@@ -22,7 +22,7 @@ const AddReview = () => {
                         icon: 'success',
                         title: 'Your work has been saved',
                         showConfirmButton: false,
-                        timer: 2000
+                        timer: 3000
                     })
 
                     reset();

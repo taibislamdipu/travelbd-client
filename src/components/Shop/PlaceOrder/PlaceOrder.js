@@ -3,6 +3,9 @@ import { useForm } from 'react-hook-form';
 import { useParams } from 'react-router';
 import useAuth from '../../../hooks/useAuth';
 import Loading from '../../Loading/Loading';
+import axios from 'axios';
+import Swal from 'sweetalert2';
+
 
 const PlaceOrder = () => {
 
@@ -13,8 +16,26 @@ const PlaceOrder = () => {
     const { user } = useAuth();
     const { displayName, email } = user;
 
-    const { register, handleSubmit, watch, formState: { errors } } = useForm();
-    const onSubmit = data => console.log(data);
+    const { register, handleSubmit, watch, reset, formState: { errors } } = useForm();
+    const onSubmit = data => {
+        data.status = 'pending';
+
+        axios.post('http://localhost:5000/addOrder', data)
+            .then(res => {
+                if (res.data.insertedId) {
+                    Swal.fire({
+                        position: 'top-end',
+                        icon: 'success',
+                        title: 'Your work has been saved',
+                        showConfirmButton: false,
+                        timer: 3000
+                    })
+                    reset();
+                }
+            })
+
+        console.log(data)
+    };
 
     useEffect(() => {
         try {
@@ -41,21 +62,21 @@ const PlaceOrder = () => {
                     <form className="mt-5" onSubmit={handleSubmit(onSubmit)}>
 
                         <div className="form-floating mb-3">
-                            <input className="form-control" value={displayName} {...register("example")} />
+                            {displayName && <input className="form-control" defaultValue={displayName} {...register("name")} required />}
                             <label>Your name</label>
                         </div>
 
                         <div className="form-floating mb-3">
-                            <input className="form-control" value={email} {...register("example2")} />
+                            {email && <input className="form-control" defaultValue={email} {...register("email")} required />}
                             <label>Email</label>
                         </div>
 
                         <div class="form-floating mb-3">
-                            <input class="form-control"  {...register("example6")} placeholder="Password a" />
-                            <label>Phone Number</label>
+                            <input class="form-control"  {...register("phone")} placeholder="Phone number" required />
+                            <label>Phone number</label>
                         </div>
                         <div class="form-floating mb-3">
-                            <input class="form-control"  {...register("example6")} placeholder="Password a" />
+                            <input class="form-control"  {...register("address")} placeholder="Address" required />
                             <label>Address</label>
                         </div>
 
