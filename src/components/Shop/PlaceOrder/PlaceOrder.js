@@ -17,24 +17,27 @@ const PlaceOrder = () => {
     const { displayName, email } = user;
 
     const { register, handleSubmit, watch, reset, formState: { errors } } = useForm();
-    const onSubmit = data => {
-        data.status = 'pending';
 
-        axios.post('http://localhost:5000/addOrder', data)
+
+    const onSubmit = data => {
+        data.status = 'Pending';
+        data.productName = products?.name;
+        data.price = products?.price;
+        data.image = products?.image;
+
+        axios.post('https://fierce-lake-75301.herokuapp.com/addOrder', data)
             .then(res => {
                 if (res.data.insertedId) {
                     Swal.fire({
                         position: 'top-end',
                         icon: 'success',
-                        title: 'Your work has been saved',
+                        title: 'Your order has been placed successfully!',
                         showConfirmButton: false,
-                        timer: 3000
+                        timer: 4000
                     })
                     reset();
                 }
             })
-
-        console.log(data)
     };
 
     useEffect(() => {
