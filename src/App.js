@@ -17,6 +17,7 @@ import AuthProvider from './contexts/AuthProvider';
 import Login from './components/Login/Login/Login';
 import Product from './components/Shop/Product/Product';
 import Dashboard from './components/Dashboard/Dashboard/Dashboard';
+import PrivateRoute from './components/Login/PrivateRoute/PrivateRoute';
 
 function App() {
   return (
@@ -40,9 +41,9 @@ function App() {
                 <Shop></Shop>
               </Route>
 
-              <Route path="/placeOrder/:productId">
+              <PrivateRoute path="/placeOrder/:productId">
                 <PlaceOrder></PlaceOrder>
-              </Route>
+              </PrivateRoute>
 
               <Route path="/product/:productId">
                 <Product></Product>

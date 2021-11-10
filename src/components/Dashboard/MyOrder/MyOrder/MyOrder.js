@@ -72,39 +72,44 @@ const MyOrder = () => {
             <p>user {email} have {myOrder?.length} order</p>
             <p>Phone Number: {userPhoneNumber}</p>
 
-            <div className="table-responsive">
+            {
+                !myOrder.length ?
+                    <h2>No data available</h2>
+                    :
 
-                {
-                    myOrder.length === 0 ?
+                    <div className="table-responsive">
 
-                        <Loading></Loading>
+                        {
+                            myOrder.length === 0 ?
 
-                        :
+                                <Loading></Loading>
 
-                        <table className="table table-hover">
-                            <thead className="table-dark">
-                                <tr>
-                                    {/* <th scope="col">Name</th> */}
-                                    {/* <th scope="col">No.</th> */}
-                                    <th scope="col">Image</th>
-                                    <th scope="col">Name</th>
-                                    <th scope="col">Price</th>
-                                    <th scope="col">Shipping Address</th>
-                                    <th scope="col">Status</th>
-                                    <th scope="col">Action</th>
-                                </tr>
-                            </thead>
+                                :
 
-                            {
-                                myOrder.map((singleOrder) => <SingleOrder
-                                    singleOrder={singleOrder}
+                                <table className="table table-hover">
+                                    <thead className="table-dark">
+                                        <tr>
+                                            {/* <th scope="col">Name</th> */}
+                                            {/* <th scope="col">No.</th> */}
+                                            <th scope="col">Image</th>
+                                            <th scope="col">Name</th>
+                                            <th scope="col">Price</th>
+                                            <th scope="col">Shipping Address</th>
+                                            <th scope="col">Status</th>
+                                            <th scope="col">Action</th>
+                                        </tr>
+                                    </thead>
 
-                                >
+                                    {
+                                        myOrder.map((singleOrder) => <SingleOrder
+                                            singleOrder={singleOrder}
 
-                                </SingleOrder>)
-                            }
+                                        >
 
-                            {/* {
+                                        </SingleOrder>)
+                                    }
+
+                                    {/* {
                                 myOrder.map((item, index) => <tbody>
                                     <tr>
                                         <td>{index + 1}</td>
@@ -128,9 +133,10 @@ const MyOrder = () => {
 
 
 
-                        </table>
-                }
-            </div>
+                                </table>
+                        }
+                    </div>
+            }
         </div>
     );
 };
