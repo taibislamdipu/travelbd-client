@@ -16,6 +16,7 @@ import PlaceOrder from './components/Shop/PlaceOrder/PlaceOrder';
 import AuthProvider from './contexts/AuthProvider';
 import Login from './components/Login/Login/Login';
 import Product from './components/Shop/Product/Product';
+import Dashboard from './components/Dashboard/Dashboard/Dashboard';
 
 function App() {
   return (
@@ -49,6 +50,10 @@ function App() {
 
               <Route path="/login">
                 <Login></Login>
+              </Route>
+
+              <Route path="/dashboard">
+                <Dashboard></Dashboard>
               </Route>
 
 
