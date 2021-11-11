@@ -22,7 +22,7 @@ const Dashboard = () => {
 
     let { path, url } = useRouteMatch();
 
-    const { logout } = useAuth();
+    const { logout, admin } = useAuth();
 
 
     return (
@@ -32,27 +32,46 @@ const Dashboard = () => {
                     <div className="dashboard-sidebar bg-light">
                         <h5 className="text-center">Dashboard</h5>
                         <ul>
-                            <Link to={`${url}`}>
-                                <li className="dashboard-menu">My order</li>
-                            </Link>
-                            <Link to={`${url}/payment`}>
-                                <li className="dashboard-menu">Payment</li>
-                            </Link>
-                            <Link to={`${url}/review`}>
-                                <li className="dashboard-menu">Add Review</li>
-                            </Link>
-                            <Link to={`${url}/manageAllOrders`}>
-                                <li className="dashboard-menu">Manage all orders</li>
-                            </Link>
-                            <Link to={`${url}/addProduct`}>
-                                <li className="dashboard-menu">Add a product</li>
-                            </Link>
-                            <Link to={`${url}/makeAdmin`}>
-                                <li className="dashboard-menu">Make admin</li>
-                            </Link>
-                            <Link to={`${url}/manageProducts`}>
-                                <li className="dashboard-menu">Manage Products</li>
-                            </Link>
+
+                            {!admin &&
+                                <div>
+                                    <Link to={`${url}`}>
+                                        <li className="dashboard-menu">My order</li>
+                                    </Link>
+
+                                    <Link to={`${url}/payment`}>
+                                        <li className="dashboard-menu">Payment</li>
+                                    </Link>
+                                    <Link to={`${url}/review`}>
+                                        <li className="dashboard-menu">Add Review</li>
+                                    </Link>
+                                </div>
+                            }
+
+
+                            {admin &&
+                                <Link to={`${url}/manageAllOrders`}>
+                                    <li className="dashboard-menu">Manage all orders</li>
+                                </Link>
+                            }
+                            {admin &&
+                                <Link to={`${url}/addProduct`}>
+                                    <li className="dashboard-menu">Add a product</li>
+                                </Link>
+                            }
+                            {admin &&
+                                <Link to={`${url}/makeAdmin`}>
+                                    <li className="dashboard-menu">Make admin</li>
+                                </Link>
+                            }
+                            {admin &&
+                                <Link to={`${url}/manageProducts`}>
+                                    <li className="dashboard-menu">Manage Products</li>
+                                </Link>
+                            }
+
+
+
                             <Link to="/">
                                 <button className="btn btn-primary mt-5" onClick={logout}>Logout</button>
                             </Link>

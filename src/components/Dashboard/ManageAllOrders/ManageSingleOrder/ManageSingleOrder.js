@@ -12,7 +12,7 @@ const ManageSingleOrder = (props) => {
     // const [orders, setOrders] = useState([]);
     const { register, handleSubmit } = useForm();
 
-    const [newStatus, setNewStatus] = useState("");
+    // const [newStatus, setNewStatus] = useState("");
     const [orderId, setOrderId] = useState("");
 
 
@@ -49,7 +49,7 @@ const ManageSingleOrder = (props) => {
         }).then((result) => {
             if (result.isConfirmed) {
 
-                const url = `http://localhost:5000/allOrders/${_id}`
+                const url = `https://fierce-lake-75301.herokuapp.com/allOrders/${_id}`
                 fetch(url, {
                     method: 'DELETE'
                 })

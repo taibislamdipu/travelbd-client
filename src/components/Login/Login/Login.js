@@ -175,7 +175,7 @@ const Login = () => {
 
     const saveUser = (email, displayName) => {
         const user = { email, displayName };
-        fetch('http://localhost:5000/users', {
+        fetch('https://fierce-lake-75301.herokuapp.com/users', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -187,7 +187,7 @@ const Login = () => {
 
     // const saveGoogleUser = (email, displayName) => {
     //     const user = { email, displayName };
-    //     fetch('http://localhost:5000/users', {
+    //     fetch('https://fierce-lake-75301.herokuapp.com/users', {
     //         method: 'POST',
     //         headers: {
     //             'content-type': 'application/json'

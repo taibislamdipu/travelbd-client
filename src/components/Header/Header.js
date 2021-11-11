@@ -121,34 +121,34 @@ const Header = () => {
                                                 </p>
                                             </div>
                                         </li>
-                                        <li><hr className="dropdown-divider" /></li>
-                                        <li className="nav-item menu-bg mt-4">
+                                        {/* <li><hr className="dropdown-divider" /></li> */}
+
+                                        {/* <li className="nav-item menu-bg mt-4">
                                             <Link to="/dashboard" className="react-router-link">
                                                 <button type="button" className="btn nav-link text-secondary fw-bold position-relative">
                                                     <FontAwesomeIcon icon={faLocationArrow} /> My Order
                                                     <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-                                                        {/* {myBooking?.length} */}
                                                     </span>
                                                 </button>
                                             </Link>
-                                        </li>
+                                        </li> */}
 
-                                        <li className="nav-item menu-bg">
+                                        {/* <li className="nav-item menu-bg">
                                             <Link to="/dashboard/review" className="nav-link fw-bold">
                                                 <FontAwesomeIcon icon={faPlus} /> Add Review
                                             </Link>
-                                        </li>
+                                        </li> */}
 
-                                        <li className="nav-item menu-bg">
+                                        {/* <li className="nav-item menu-bg">
                                             <Link to="/dashboard/payment" className="react-router-link">
                                                 <button className="btn nav-link text-secondary fw-bold position-relative">
                                                     <FontAwesomeIcon icon={faListUl} /> Add Payment
                                                     <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-                                                        {/* {allBooking?.length} */}
                                                     </span>
                                                 </button>
                                             </Link>
-                                        </li>
+                                        </li> */}
+
                                         <li><hr className="dropdown-divider" /></li>
                                         <li className="nav-item menu-bg fw-bold">
 
