@@ -16,7 +16,7 @@ const Login = () => {
 
     const auth = getAuth();
 
-    const { signInUsingGoogle } = useAuth();
+    const { signInUsingGoogle, saveGoogleUser } = useAuth();
 
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
@@ -31,10 +31,15 @@ const Login = () => {
 
     const redirect_url = location.state?.from || '/';
 
+    const [user, setUser] = useState({});
+
+
+
     const handleGoogleLogin = () => {
         signInUsingGoogle()
-
             .then(result => {
+                const user = result.user;
+                saveGoogleUser(user.email, user.displayName);
                 history.push(redirect_url);
             })
             .catch((error) => {
@@ -95,9 +100,16 @@ const Login = () => {
     const createNewUser = (email, password) => {
         createUserWithEmailAndPassword(auth, email, password)
             .then(result => {
-                const user = result.user;
-                console.log(user);
+                // const user = result.user;
+                // console.log(user);
                 setformErrorMsg('');
+
+                const newUser = { email, displayName: name };
+                // setUser(newUser)
+                // save user to the database
+                saveUser(email, name);
+
+
                 verifyEmail();
                 setUserName();
                 alert('Your account has been created successfully. Redirecting to your destination page..');
@@ -160,6 +172,30 @@ const Login = () => {
                 // ...
             });
     }
+
+    const saveUser = (email, displayName) => {
+        const user = { email, displayName };
+        fetch('http://localhost:5000/users', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(user)
+        })
+            .then()
+    }
+
+    // const saveGoogleUser = (email, displayName) => {
+    //     const user = { email, displayName };
+    //     fetch('http://localhost:5000/users', {
+    //         method: 'POST',
+    //         headers: {
+    //             'content-type': 'application/json'
+    //         },
+    //         body: JSON.stringify(user)
+    //     })
+    //         .then()
+    // }
 
 
     return (
