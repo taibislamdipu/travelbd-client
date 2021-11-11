@@ -45,7 +45,7 @@ const useFirebase = () => {
     const saveGoogleUser = (email, displayName) => {
         const user = { email, displayName };
         fetch('http://localhost:5000/users', {
-            method: 'POST',
+            method: 'PUT',
             headers: {
                 'content-type': 'application/json'
             },

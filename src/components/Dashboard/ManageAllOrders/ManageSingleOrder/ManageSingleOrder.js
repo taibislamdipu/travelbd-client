@@ -49,7 +49,7 @@ const ManageSingleOrder = (props) => {
         }).then((result) => {
             if (result.isConfirmed) {
 
-                const url = `https://fierce-lake-75301.herokuapp.com/allOrders/${_id}`
+                const url = `http://localhost:5000/allOrders/${_id}`
                 fetch(url, {
                     method: 'DELETE'
                 })
