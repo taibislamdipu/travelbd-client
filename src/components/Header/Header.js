@@ -123,7 +123,7 @@ const Header = () => {
                                         </li>
                                         <li><hr className="dropdown-divider" /></li>
                                         <li className="nav-item menu-bg mt-4">
-                                            <Link to="/myBooking" className="react-router-link">
+                                            <Link to="/dashboard" className="react-router-link">
                                                 <button type="button" className="btn nav-link text-secondary fw-bold position-relative">
                                                     <FontAwesomeIcon icon={faLocationArrow} /> My Order
                                                     <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
@@ -134,13 +134,13 @@ const Header = () => {
                                         </li>
 
                                         <li className="nav-item menu-bg">
-                                            <Link to="/addPackage" className="nav-link fw-bold">
+                                            <Link to="/dashboard/review" className="nav-link fw-bold">
                                                 <FontAwesomeIcon icon={faPlus} /> Add Review
                                             </Link>
                                         </li>
 
                                         <li className="nav-item menu-bg">
-                                            <Link to="/allBooking" className="react-router-link">
+                                            <Link to="/dashboard/payment" className="react-router-link">
                                                 <button className="btn nav-link text-secondary fw-bold position-relative">
                                                     <FontAwesomeIcon icon={faListUl} /> Add Payment
                                                     <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
