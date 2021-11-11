@@ -12,7 +12,7 @@ const Latest = () => {
             async function callApi() {
                 let result = await fetch('https://fierce-lake-75301.herokuapp.com/products')
                 result = await result.json()
-                setProduct(result.slice(0, 6));
+                setProduct(result.slice(6, 12));
             }
 
 

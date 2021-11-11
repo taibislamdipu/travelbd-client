@@ -26,36 +26,36 @@ const Header = () => {
                     <div class="collapse navbar-collapse" id="navbarNavDropdown">
                         <ul class="navbar-nav">
                             <li class="nav-item">
-                                <Link to={"/"}>
-                                    <a class="nav-link active" aria-current="page">Home</a>
+                                <Link to={"/"} className="nav-link active" aria-current="page">
+                                    Home
                                 </Link>
                             </li>
                             <li class="nav-item">
-                                <Link to={"/shop"}>
-                                    <a class="nav-link">Shop</a>
+                                <Link to={"/shop"} className="nav-link">
+                                    Shop
+                                </Link>
+                            </li>
+                            <li class="nav-item" >
+                                <Link to={"/"} className="nav-link">
+                                    Review
                                 </Link>
                             </li>
                             <li class="nav-item">
-                                <Link to={"/"}>
-                                    <a class="nav-link" >Review</a>
+                                <Link to={"/"} className="nav-link">
+                                    Blog
                                 </Link>
                             </li>
                             <li class="nav-item">
-                                <Link to={"/"}>
-                                    <a class="nav-link" >Blog</a>
-                                </Link>
-                            </li>
-                            <li class="nav-item">
-                                <Link to={"/"}>
-                                    <a class="nav-link" >Contact Us</a>
+                                <Link to={"/"} className="nav-link">
+                                    Contact Us
                                 </Link>
                             </li>
                             {
                                 user.email &&
 
                                 <li class="nav-item">
-                                    <Link to={"/dashboard"}>
-                                        <a class="nav-link" >Dashboard</a>
+                                    <Link to={"/dashboard"} className="nav-link">
+                                        Dashboard
                                     </Link>
                                 </li>
                             }

@@ -43,7 +43,7 @@ const AddProduct = () => {
                     </div>
 
                     <div className="form-floating mb-3">
-                        <input className="form-control"  {...register("description")} placeholder="Description" required />
+                        <textarea className="form-control"  {...register("description")} placeholder="Description" required />
                         <label>Description</label>
                     </div>
 
