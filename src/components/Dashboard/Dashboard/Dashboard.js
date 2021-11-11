@@ -16,6 +16,7 @@ import ManageAllOrders from '../ManageAllOrders/ManageAllOrders/ManageAllOrders'
 import AddProduct from '../AddProduct/AddProduct';
 import MakeAdmin from '../MakeAdmin/MakeAdmin';
 import useAuth from '../../../hooks/useAuth';
+import ManageProducts from '../ManageProducts/ManageProducts/ManageProducts';
 
 const Dashboard = () => {
 
@@ -49,6 +50,9 @@ const Dashboard = () => {
                             <Link to={`${url}/makeAdmin`}>
                                 <li className="dashboard-menu">Make admin</li>
                             </Link>
+                            <Link to={`${url}/manageProducts`}>
+                                <li className="dashboard-menu">Manage Products</li>
+                            </Link>
                             <Link to="/">
                                 <button className="btn btn-primary mt-5" onClick={logout}>Logout</button>
                             </Link>
@@ -74,6 +78,9 @@ const Dashboard = () => {
                         </Route>
                         <Route path={`${path}/makeAdmin`}>
                             <MakeAdmin></MakeAdmin>
+                        </Route>
+                        <Route path={`${path}/manageProducts`}>
+                            <ManageProducts></ManageProducts>
                         </Route>
 
                     </Switch>
