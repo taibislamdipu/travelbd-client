@@ -27,6 +27,10 @@ body{
   color: black;
 }
 
+.react-hook-link:hover{
+  color: black;
+}
+
 .product:hover img{
   opacity: .8;
 }

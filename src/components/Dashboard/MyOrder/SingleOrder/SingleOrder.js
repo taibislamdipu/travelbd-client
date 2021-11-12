@@ -6,7 +6,7 @@ import useAuth from '../../../../hooks/useAuth';
 
 const SingleOrder = (props) => {
 
-    console.log(props.singleOrder);
+    // console.log(props.singleOrder);
 
     const { _id, image, productName, price, address, status, phone } = props.singleOrder;
 

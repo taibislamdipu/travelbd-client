@@ -12,6 +12,8 @@ const Header = () => {
     const { user, logout } = useAuth();
     const { photoURL, displayName, email } = user;
 
+    console.log('user', user);
+
     return (
         <div>
             <nav class="navbar navbar-expand-lg navbar-light bg-white">
