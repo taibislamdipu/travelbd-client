@@ -5,8 +5,8 @@ import { useForm } from 'react-hook-form';
 import Swal from 'sweetalert2';
 
 const SingleProduct = (props) => {
-
     const { _id, name, description, price, image } = props.product;
+    const { itemNo } = props;
 
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
     const onSubmit = data => console.log(data);
@@ -51,6 +51,7 @@ const SingleProduct = (props) => {
     return (
         <tbody>
             <tr>
+                <td>{itemNo + 1}</td>
                 <td>
                     <img src={image} height={100} alt="" />
                 </td>

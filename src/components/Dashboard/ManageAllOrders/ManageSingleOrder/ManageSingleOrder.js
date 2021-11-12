@@ -98,7 +98,8 @@ const ManageSingleOrder = (props) => {
                             <option value="Approve">Approve</option>
                             <option value="Done">Done</option>
                         </select>
-                        <input type="submit" />
+                        {/* <input type="submit" /> */}
+                        <button type="submit" className="btn custom-black-btn mt-3">Submit</button>
                     </form>
                 </td>
                 <td>

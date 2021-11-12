@@ -32,20 +32,36 @@ const MakeAdmin = () => {
 
 
     return (
-        <div>
-            <h1>MakeAdmin</h1>
+        <div className="container px-0">
+            <div className="px-2 py-4 px-md-4 py-md-3 bg-white shadow-sm rounded">
+                <p className="mt-2 fw-bold">Make Admin</p>
+                <hr />
+                <div className="row">
+                    <div className="col-md-6 mb-5">
+                        <form onSubmit={handleAdminSubmit}>
+                            <div className="form-floating mb-3">
+                                <input
+                                    type="email"
+                                    className="form-control"
+                                    onBlur={handleOnBlur}
+                                    placeholder="Email"
+                                    required
+                                />
+                                <label>Email</label>
+                            </div>
 
-            <form className="col-md-6" onSubmit={handleAdminSubmit}>
-                <div className="mb-3">
-                    <label>Email</label>
-                    <input
-                        type="email"
-                        className="form-control"
-                        onBlur={handleOnBlur}
-                    />
+                            <button type="submit" className="btn custom-black-btn">Make Admin</button>
+                        </form>
+                    </div>
+
+                    <div className="col-md-6">
+                        <p className="fw-bold">How to make a new admin</p>
+                        <p>
+                            Input any existing user email address of this website to create a new admin. Only an admin can create a new admin.
+                        </p>
+                    </div>
                 </div>
-                <button type="submit" className="btn btn-primary">Make Admin</button>
-            </form>
+            </div>
         </div>
     );
 };

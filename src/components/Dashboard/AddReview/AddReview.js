@@ -1,6 +1,7 @@
 import axios from 'axios';
-import React from 'react';
+import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
+import Rating from 'react-rating';
 import Swal from 'sweetalert2';
 import useAuth from '../../../hooks/useAuth';
 
@@ -9,11 +10,13 @@ const AddReview = () => {
     const { user } = useAuth();
     const { displayName, email } = user;
 
+    const [rating, setRating] = useState('');
 
     const { register, handleSubmit, watch, formState: { errors }, reset } = useForm();
 
     const onSubmit = data => {
         data.photoURL = user.photoURL;
+        data.rating = rating;
         axios.post('https://fierce-lake-75301.herokuapp.com/addReview', data)
             .then(res => {
                 if (res.data.insertedId) {
@@ -21,7 +24,7 @@ const AddReview = () => {
                     Swal.fire({
                         position: 'top-end',
                         icon: 'success',
-                        title: 'Your work has been saved',
+                        title: 'Thank You for your feedback!',
                         showConfirmButton: false,
                         timer: 3000
                     })
@@ -32,39 +35,68 @@ const AddReview = () => {
             })
     };
 
+
+
     return (
-        <div className="container">
-            <div>
-                <h1>Add review</h1>
+        <div className="container px-0">
+            <div className="px-2 py-4 px-md-4 py-md-3 bg-white shadow-sm rounded">
+                <p className="mt-2 fw-bold">Add a Review</p>
+                <hr />
+                <div className="row mb-5">
+                    <div className="col-md-6">
+                        <form className="" onSubmit={handleSubmit(onSubmit)}>
+                            <div className="form-floating mb-3">
+                                <textarea className="form-control"
+                                    rows="3"
+                                    name="review"
+                                    maxLength="250"
+                                    {...register("review")}
+                                    placeholder="Review"
+                                    required
+                                >
+                                </textarea>
+                                <label>Your review</label>
+                            </div>
 
-                <div className="col-md-6">
-                    <form className="mt-5" onSubmit={handleSubmit(onSubmit)}>
+                            <div className="form-floating mb-3">
+                                <input className="form-control" value={displayName}  {...register("name")} placeholder="Name" required />
+                                <label>Your Name</label>
+                            </div>
 
-                        <div className="form-floating mb-3">
-                            <textarea className="form-control" rows="3"  {...register("review")} placeholder="Review" required ></textarea>
-                            <label>Your review</label>
-                        </div>
+                            <div className="form-floating mb-3">
+                                <input className="form-control" value={email}  {...register("email")} placeholder="Email" required />
+                                <label>Your Email</label>
+                            </div>
 
-                        <div className="form-floating mb-3">
-                            <input className="form-control" value={displayName}  {...register("name")} placeholder="Name" required />
-                            <label>Your Name</label>
-                        </div>
+                            <div className="mb-3 border rounded">
+                                <div className="p-2">
+                                    <p>Your rating</p>
+                                    <div className="star-rating">
+                                        <Rating
+                                            initialRating={0}
+                                            emptySymbol="far fa-star"
+                                            fullSymbol="fas fa-star"
+                                            fractions={2}
+                                            // readonly
+                                            onChange={(rate) => setRating(rate)}
+                                        />
+                                    </div>
+                                </div>
+                            </div>
 
-                        <div className="form-floating mb-3">
-                            <input className="form-control" value={email}  {...register("email")} placeholder="Email" required />
-                            <label>Your Email</label>
-                        </div>
+                            <button type="submit" className="btn custom-black-btn" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                Submit
+                            </button>
 
-                        <div className="form-floating mb-3">
-                            <input className="form-control" type="number"  {...register("rating")} placeholder="Rating" required />
-                            <label>Your rating out 0-5</label>
-                        </div>
-
-                        <button type="submit" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                            Post Review
-                        </button>
-
-                    </form>
+                        </form>
+                    </div>
+                    <div className="col-md-6">
+                        <p>
+                            Your email address will not be published.
+                            <br />
+                            After submit, your review will be show on home page.
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>

@@ -10,7 +10,7 @@ const HeroSection = () => {
                     <div className="row align-items-center">
                         <div className="col-md-6 text-white mt-5">
                             <p>Keep Traveling</p>
-                            <h1>
+                            <h1 className="display-3">
                                 Travel T-shirt
                             </h1>
                             <p>

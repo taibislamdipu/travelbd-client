@@ -9,13 +9,14 @@ const Review = () => {
 
     const [userReview, setUserReview] = useState([]);
 
-    var settings = {
-        dots: true,
-        infinite: true,
-        speed: 500,
-        slidesToShow: 1,
-        slidesToScroll: 1
-    };
+
+    // var settings = {
+    //     dots: true,
+    //     infinite: true,
+    //     speed: 500,
+    //     slidesToShow: 1,
+    //     slidesToScroll: 1
+    // };
 
     useEffect(() => {
         try {

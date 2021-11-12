@@ -29,7 +29,7 @@ const Dashboard = () => {
         <div className="container-fluid">
             <div className="container my-4">
                 <div className="row ">
-                    <div className="col-md-3 h-100 bg-white shadow-sm mb-3 rounded sticky-top">
+                    <div className="col-md-3  h-100 bg-white shadow-sm mb-3 rounded sticky-md-top">
                         <div className="dashboard-sidebar ">
                             <p className="text-center mt-4 fw-bold">Dashboard</p>
                             <hr />
@@ -54,19 +54,19 @@ const Dashboard = () => {
 
                                 {admin &&
                                     <div>
-                                        <Link to={`${url}/manageAllOrders`}>
-                                            <li className="dashboard-menu">Manage all orders</li>
+                                        <Link to={`${url}/manageAllOrders`} className="nav-link menu-bg react-hook-link">
+                                            <li className="dashboard-menu nav-item">Manage All Orders</li>
                                         </Link>
 
-                                        <Link to={`${url}/addProduct`}>
-                                            <li className="dashboard-menu">Add a product</li>
+                                        <Link to={`${url}/addProduct`} className="nav-link menu-bg react-hook-link">
+                                            <li className="dashboard-menu">Add A Product</li>
                                         </Link>
 
-                                        <Link to={`${url}/makeAdmin`}>
-                                            <li className="dashboard-menu">Make admin</li>
+                                        <Link to={`${url}/makeAdmin`} className="nav-link menu-bg react-hook-link">
+                                            <li className="dashboard-menu">Make Admin</li>
                                         </Link>
 
-                                        <Link to={`${url}/manageProducts`}>
+                                        <Link to={`${url}/manageProducts`} className="nav-link menu-bg react-hook-link">
                                             <li className="dashboard-menu">Manage Products</li>
                                         </Link>
                                     </div>

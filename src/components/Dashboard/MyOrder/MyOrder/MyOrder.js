@@ -31,47 +31,23 @@ const MyOrder = () => {
         }
     }, [email])
 
-
-
-    // const handleDelete = () => {
-    //     Swal.fire({
-    //         title: 'Are you sure?',
-    //         text: "You won't be able to revert this!",
-    //         icon: 'warning',
-    //         showCancelButton: true,
-    //         confirmButtonColor: '#3085d6',
-    //         cancelButtonColor: '#d33',
-    //         confirmButtonText: 'Yes, delete it!'
-    //     }).then((result) => {
-    //         if (result.isConfirmed) {
-
-    //             const url = `https://fierce-lake-75301.herokuapp.com/allUserOrders/${myOrder?._id}`
-    //             fetch(url, {
-    //                 method: 'DELETE'
-    //             })
-    //                 .then(res => res.json())
-    //                 .then(data => {
-    //                     if (data.deletedCount) {
-    //                         Swal.fire(
-    //                             'Deleted!',
-    //                             'Your Order has been Canceled.',
-    //                             'success'
-    //                         )
-    //                     }
-    //                 })
-
-
-
-    //         }
-    //     })
-    // }
-
     return (
         <div className="container px-0">
             <div className="px-2 py-4 px-md-4 py-md-3 bg-white shadow-sm rounded">
-                <h1>My Order</h1>
-                <p>user {email} have {myOrder?.length} order</p>
-                <p>Phone Number: {userPhoneNumber}</p>
+                <p className="mt-2 fw-bold">My Order</p>
+                <hr />
+
+                <div className="d-flex justify-content-between">
+                    <div>
+                        <p>You order {myOrder?.length} items.</p>
+                    </div>
+                    <div>
+                        <p>Phone: {userPhoneNumber}</p>
+                    </div>
+                    <div>
+                        <p>Email: {email}</p>
+                    </div>
+                </div>
 
                 {
                     !myOrder.length ?
@@ -87,9 +63,9 @@ const MyOrder = () => {
 
                                     :
 
-                                    <table className="table table-hover">
-                                        <thead className="table-dark">
-                                            <tr>
+                                    <table className="table table-hover table-bordered">
+                                        <thead className="table-dark ">
+                                            <tr className="">
                                                 {/* <th scope="col">Name</th> */}
                                                 {/* <th scope="col">No.</th> */}
                                                 <th scope="col">Image</th>

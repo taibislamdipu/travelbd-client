@@ -28,36 +28,63 @@ const AddProduct = () => {
 
 
     return (
-        <div className="container">
-            <h1>Add Product</h1>
+        <div className="container px-0">
+            <div className="px-2 py-4 px-md-4 py-md-3 bg-white shadow-sm rounded">
+                <p className="mt-2 fw-bold">Add Product</p>
+                <hr />
+                <div className="col-md-6">
+                    <form className="mb-5" onSubmit={handleSubmit(onSubmit)}>
+                        <div className="form-floating mb-3">
+                            <input
+                                className="form-control"
+                                {...register("name")}
+                                placeholder="Name"
+                                required
+                                maxLength="60"
+                            />
+                            <label>Product Name</label>
+                        </div>
+                        <div className="form-floating mb-3">
+                            <input
+                                className="form-control \"
+                                {...register("price")}
+                                placeholder="Price"
+                                required
+                                type="number"
+                            />
+                            <label>Price</label>
+                        </div>
 
-            <div className="col-md-6">
-                <form className="mt-5" onSubmit={handleSubmit(onSubmit)}>
-                    <div className="form-floating mb-3">
-                        <input className="form-control"   {...register("name")} placeholder="Name" required />
-                        <label>Product Name</label>
-                    </div>
-                    <div className="form-floating mb-3">
-                        <input className="form-control"  {...register("price")} placeholder="Price" required />
-                        <label>Price</label>
-                    </div>
-
-                    <div className="form-floating mb-3">
-                        <textarea className="form-control"  {...register("description")} placeholder="Description" required />
-                        <label>Description</label>
-                    </div>
+                        <div className="form-floating mb-3">
+                            <textarea
+                                className="form-control"
+                                {...register("description")}
+                                placeholder="Description"
+                                maxLength="500"
+                                required
+                            />
+                            <label>Description</label>
+                        </div>
 
 
-                    <div className="form-floating mb-3">
-                        <input className="form-control"  {...register("image")} placeholder="Image" required />
-                        <label>Product Image</label>
-                    </div>
+                        <div className="form-floating mb-3">
+                            <input className="form-control"  {...register("image")} placeholder="Image" required />
+                            <label>Product Image</label>
+                            <p className="text-secondary">
+                                <small>
+                                    * Copy any image url from internet and paste it here.
+                                    <br />
+                                    example: https://i.ibb.co/qJGVFzG/teeshirt6.jpg
+                                </small>
+                            </p>
+                        </div>
 
 
-                    <button type="submit" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                        Add Product
-                    </button>
-                </form>
+                        <button type="submit" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                            Add Product
+                        </button>
+                    </form>
+                </div>
             </div>
         </div>
     );

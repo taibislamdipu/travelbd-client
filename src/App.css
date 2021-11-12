@@ -1,4 +1,7 @@
 
+
+/* all global style */
+
 body{
   font-family: 'Open Sans', sans-serif;
   background-color: #F2F3F8;
@@ -38,3 +41,4 @@ body{
 .product img{
   transition: 0.3s
 }
+

@@ -124,45 +124,13 @@ const Header = () => {
                                                 </p>
                                             </div>
                                         </li>
-                                        {/* <li><hr className="dropdown-divider" /></li> */}
-
-                                        {/* <li className="nav-item menu-bg mt-4">
-                                            <Link to="/dashboard" className="react-router-link">
-                                                <button type="button" className="btn nav-link text-secondary fw-bold position-relative">
-                                                    <FontAwesomeIcon icon={faLocationArrow} /> My Order
-                                                    <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-                                                    </span>
-                                                </button>
-                                            </Link>
-                                        </li> */}
-
-                                        {/* <li className="nav-item menu-bg">
-                                            <Link to="/dashboard/review" className="nav-link fw-bold">
-                                                <FontAwesomeIcon icon={faPlus} /> Add Review
-                                            </Link>
-                                        </li> */}
-
-                                        {/* <li className="nav-item menu-bg">
-                                            <Link to="/dashboard/payment" className="react-router-link">
-                                                <button className="btn nav-link text-secondary fw-bold position-relative">
-                                                    <FontAwesomeIcon icon={faListUl} /> Add Payment
-                                                    <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-                                                    </span>
-                                                </button>
-                                            </Link>
-                                        </li> */}
 
                                         <li><hr className="dropdown-divider" /></li>
                                         <li className="nav-item menu-bg fw-bold">
 
                                             <Link to="/" className="nav-link " onClick={logout}>
-                                                {/* <button className="btn ms-3 btn-outline-secondary" onClick={logout}> */}
                                                 <FontAwesomeIcon icon={faSignOutAlt} /> LOGOUT
-                                                {/* </button> */}
                                             </Link>
-
-                                            {/* <Link to="/login" className="nav-link cool-link">LOGIN</Link> */}
-
                                         </li>
 
                                     </ul>

@@ -20,43 +20,49 @@ const ManageProducts = () => {
     }, [])
 
     return (
-        <div>
-            <h1>Manage Products: {allProducts.length} </h1>
+        <div className="container">
+            <div className="px-2 py-4 px-md-4 py-md-3 bg-white shadow-sm rounded">
+                <p className="mt-2 fw-bold">Manage Products: {allProducts.length} </p>
+                <hr />
+                <div className="table-responsive">
 
-            <div className="table-responsive">
+                    {
+                        allProducts.length === 0 ?
 
-                {
-                    allProducts.length === 0 ?
+                            <Loading></Loading>
 
-                        <Loading></Loading>
+                            :
 
-                        :
+                            <table className="table table-hover table-bordered">
+                                <thead className="table-dark">
+                                    <tr>
+                                        <th scope="col">#</th>
+                                        <th scope="col">Image</th>
+                                        <th scope="col">Name</th>
+                                        <th scope="col">Price</th>
+                                        <th scope="col">Description</th>
+                                        {/* <th scope="col">Status</th> */}
+                                        <th scope="col">Action</th>
+                                    </tr>
+                                </thead>
 
-                        <table className="table table-hover">
-                            <thead className="table-dark">
-                                <tr>
-                                    <th scope="col">Image</th>
-                                    <th scope="col">Name</th>
-                                    <th scope="col">Price</th>
-                                    <th scope="col">Description</th>
-                                    {/* <th scope="col">Status</th> */}
-                                    <th scope="col">Action</th>
-                                </tr>
-                            </thead>
+                                {
+                                    allProducts.map((product, index) => <SingleProduct
+                                        product={product}
+                                        itemNo={index}
+                                    >
 
-                            {
-                                allProducts.map(product => <SingleProduct product={product}>
-
-                                </SingleProduct>)
-                            }
-
-
-
-
+                                    </SingleProduct>)
+                                }
 
 
-                        </table>
-                }
+
+
+
+
+                            </table>
+                    }
+                </div>
             </div>
         </div>
     );

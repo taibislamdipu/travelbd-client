@@ -25,50 +25,51 @@ const ManageAllOrders = () => {
 
 
     return (
-        <div>
-            <h1>Manage All Orders: {allOrders.length}</h1>
+        <div className="container px-0">
+            <div className="bg-white px-2 px-md-4 py-md-3 shadow-sm rounded">
+                <p className="mt-2 fw-bold">Manage All Orders: {allOrders.length}</p>
+                <hr />
+
+                <div className="table-responsive">
+
+                    {
+                        allOrders.length === 0 ?
+
+                            <Loading></Loading>
+
+                            :
+
+                            <table className="table table-hover table-bordered">
+                                <thead className="table-dark">
+                                    <tr>
+                                        {/* <th scope="col">Name</th> */}
+                                        {/* <th scope="col">No.</th> */}
+                                        <th scope="col">Image</th>
+                                        <th scope="col">Name</th>
+                                        <th scope="col">Price</th>
+                                        <th scope="col">Shipping Address</th>
+                                        <th scope="col">Status</th>
+                                        <th scope="col">Action</th>
+                                    </tr>
+                                </thead>
+
+                                {
+                                    allOrders.map((singleOrder) => <ManageSingleOrder
+                                        singleOrder={singleOrder}
+                                    >
+
+                                    </ManageSingleOrder>)
+                                }
 
 
-            <div className="table-responsive">
-
-                {
-                    allOrders.length === 0 ?
-
-                        <Loading></Loading>
-
-                        :
-
-                        <table className="table table-hover">
-                            <thead className="table-dark">
-                                <tr>
-                                    {/* <th scope="col">Name</th> */}
-                                    {/* <th scope="col">No.</th> */}
-                                    <th scope="col">Image</th>
-                                    <th scope="col">Name</th>
-                                    <th scope="col">Price</th>
-                                    <th scope="col">Shipping Address</th>
-                                    <th scope="col">Status</th>
-                                    <th scope="col">Action</th>
-                                </tr>
-                            </thead>
-
-                            {
-                                allOrders.map((singleOrder) => <ManageSingleOrder
-                                    singleOrder={singleOrder}
-                                >
-
-                                </ManageSingleOrder>)
-                            }
 
 
 
 
-
-
-                        </table>
-                }
+                            </table>
+                    }
+                </div>
             </div>
-
         </div>
     );
 };
