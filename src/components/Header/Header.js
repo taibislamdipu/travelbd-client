@@ -14,7 +14,7 @@ const Header = () => {
 
     return (
         <div>
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <nav class="navbar navbar-expand-lg navbar-light bg-white">
                 <div class="container">
                     <Link to={'/'} className="navbar-brand">
                         <div>

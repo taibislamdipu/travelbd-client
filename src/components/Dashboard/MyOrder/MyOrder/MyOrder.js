@@ -67,49 +67,50 @@ const MyOrder = () => {
     // }
 
     return (
-        <div>
-            <h1>My Order</h1>
-            <p>user {email} have {myOrder?.length} order</p>
-            <p>Phone Number: {userPhoneNumber}</p>
+        <div className="container px-0">
+            <div className="px-2 py-4 px-md-4 py-md-3 bg-white shadow-sm rounded">
+                <h1>My Order</h1>
+                <p>user {email} have {myOrder?.length} order</p>
+                <p>Phone Number: {userPhoneNumber}</p>
 
-            {
-                !myOrder.length ?
-                    <h2>No data available</h2>
-                    :
+                {
+                    !myOrder.length ?
+                        <h2>No data available</h2>
+                        :
 
-                    <div className="table-responsive">
+                        <div className="table-responsive">
 
-                        {
-                            myOrder.length === 0 ?
+                            {
+                                myOrder.length === 0 ?
 
-                                <Loading></Loading>
+                                    <Loading></Loading>
 
-                                :
+                                    :
 
-                                <table className="table table-hover">
-                                    <thead className="table-dark">
-                                        <tr>
-                                            {/* <th scope="col">Name</th> */}
-                                            {/* <th scope="col">No.</th> */}
-                                            <th scope="col">Image</th>
-                                            <th scope="col">Name</th>
-                                            <th scope="col">Price</th>
-                                            <th scope="col">Shipping Address</th>
-                                            <th scope="col">Status</th>
-                                            <th scope="col">Action</th>
-                                        </tr>
-                                    </thead>
+                                    <table className="table table-hover">
+                                        <thead className="table-dark">
+                                            <tr>
+                                                {/* <th scope="col">Name</th> */}
+                                                {/* <th scope="col">No.</th> */}
+                                                <th scope="col">Image</th>
+                                                <th scope="col">Name</th>
+                                                <th scope="col">Price</th>
+                                                <th scope="col">Shipping Address</th>
+                                                <th scope="col">Status</th>
+                                                <th scope="col">Action</th>
+                                            </tr>
+                                        </thead>
 
-                                    {
-                                        myOrder.map((singleOrder) => <SingleOrder
-                                            singleOrder={singleOrder}
+                                        {
+                                            myOrder.map((singleOrder) => <SingleOrder
+                                                singleOrder={singleOrder}
 
-                                        >
+                                            >
 
-                                        </SingleOrder>)
-                                    }
+                                            </SingleOrder>)
+                                        }
 
-                                    {/* {
+                                        {/* {
                                 myOrder.map((item, index) => <tbody>
                                     <tr>
                                         <td>{index + 1}</td>
@@ -133,10 +134,11 @@ const MyOrder = () => {
 
 
 
-                                </table>
-                        }
-                    </div>
-            }
+                                    </table>
+                            }
+                        </div>
+                }
+            </div>
         </div>
     );
 };
