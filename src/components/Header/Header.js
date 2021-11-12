@@ -1,5 +1,6 @@
 import { faListUl, faLocationArrow, faPlus, faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { HashLink } from 'react-router-hash-link';
 import React from 'react';
 import { Link } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
@@ -36,9 +37,9 @@ const Header = () => {
                                 </Link>
                             </li>
                             <li class="nav-item" >
-                                <Link to={"/"} className="nav-link">
+                                <HashLink to={"/home#review"} className="nav-link">
                                     Review
-                                </Link>
+                                </HashLink>
                             </li>
                             <li class="nav-item">
                                 <Link to={"/"} className="nav-link">

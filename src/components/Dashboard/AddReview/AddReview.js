@@ -13,6 +13,7 @@ const AddReview = () => {
     const { register, handleSubmit, watch, formState: { errors }, reset } = useForm();
 
     const onSubmit = data => {
+        data.photoURL = user.photoURL;
         axios.post('https://fierce-lake-75301.herokuapp.com/addReview', data)
             .then(res => {
                 if (res.data.insertedId) {
@@ -24,6 +25,7 @@ const AddReview = () => {
                         showConfirmButton: false,
                         timer: 3000
                     })
+                    console.log(data);
 
                     reset();
                 }

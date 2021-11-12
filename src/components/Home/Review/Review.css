@@ -1,0 +1,20 @@
+
+
+
+.review-section{
+    /* background: url(../../../images/reviewBgGif1.gif) no-repeat center center fixed; */
+    background-size: cover;
+}
+
+.star-rating{
+    color: #F8B712;
+}
+
+.review{
+    text-align: justify; 
+}
+
+.review-img{
+    
+    margin: -50px;
+}

@@ -24,40 +24,42 @@ const Shop = () => {
     }, [])
 
     return (
-        <div className="container">
-            <h2 className="text-center my-5">All T-shirt</h2>
+        <div className="container my-5">
+            <div className="px-2 py-4 px-md-4 py-md-3 bg-white shadow-sm rounded">
+                <h2 className="text-center my-5">All T-shirt</h2>
 
-            {
-                products.length === 0 ?
+                {
+                    products.length === 0 ?
 
-                    <Loading></Loading>
+                        <Loading></Loading>
 
-                    :
+                        :
 
-                    <div class="row row-cols-1 row-cols-md-3 g-4">
+                        <div class="row row-cols-1 row-cols-md-3 g-4">
 
-                        {
-                            products.map(pd => <div class="col">
-                                <div class="card h-100">
-                                    <img src={pd?.image} class="card-img-top" alt="..." />
-                                    <div class="card-body">
-                                        <h5 class="card-title">{pd?.name}</h5>
-                                        <p>${pd?.price}</p>
-                                        <div className="card-footer">
-                                            <Link to={`/product/${pd?._id}`}>
-                                                <button className="btn btn-primary">
-                                                    Buy Now
-                                                </button>
-                                            </Link>
+                            {
+                                products.map(pd => <div class="col">
+                                    <Link to={`/product/${pd?._id}`} className="react-hook-link">
+                                        <div class="card border-0 h-100 product">
+                                            <img src={pd?.image} class="card-img-top" alt="..." />
+                                            <div class="card-body">
+                                                <p class="card-title fw-bold">{pd?.name}</p>
+                                                <p className="item-price fw-bold">${pd?.price}</p>
+                                                <div className="">
+                                                    <button className="btn custom-black-btn">
+                                                        Buy Now
+                                                    </button>
+                                                </div>
+                                            </div>
                                         </div>
-                                    </div>
-                                </div>
-                            </div>)
-                        }
+                                    </Link>
+                                </div>)
+                            }
 
 
-                    </div>
-            }
+                        </div>
+                }
+            </div>
 
         </div>
     );

@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from 'react';
+import './Review.css';
 import Rating from 'react-rating';
-import Slider from "react-slick";
+import { Swiper, SwiperSlide } from "swiper/react";
+import 'swiper/swiper-bundle.min.css'
+import 'swiper/swiper.min.css'
 
 const Review = () => {
 
@@ -29,33 +32,48 @@ const Review = () => {
 
 
     return (
-        <div className="container my-5 text-center">
+        <div className="container review-section my-5 text-center" id="review">
             <h2 className="text-center">Review</h2>
-            <div className="my-5">
 
-                <Slider {...settings}>
-                    {
-                        userReview.map(review => <div >
-                            <h4 className="fw-bold text-uppercase ">{review?.name}</h4>
-                            <div className="star-rating">
-                                <Rating
-                                    initialRating={review?.rating}
-                                    emptySymbol="far fa-star"
-                                    fullSymbol="fas fa-star"
-                                    readonly
-                                />
+            {/* <div className=""> */}
+
+            <Swiper
+                spaceBetween={50}
+                slidesPerView={2}
+                centeredSlides
+                onSlideChange={() => console.log("slide change")}
+                onSwiper={swiper => console.log(swiper)}
+            >
+                {
+                    userReview.map(review => <SwiperSlide>
+
+                        <div className="">
+                            <img src={review?.photoURL} className="mt-5 text-center review-img rounded-circle" alt="" />
+                            <div className="shadow-sm  bg-white rounded py-5">
+                                <h6 className="fw-bold">{review?.name}</h6>
+                                <div className="star-rating">
+                                    <Rating
+                                        initialRating={review?.rating}
+                                        emptySymbol="far fa-star"
+                                        fullSymbol="fas fa-star"
+                                        readonly
+                                    />
+                                </div>
+                                <p className="fs-5 px-4 review">
+                                    <small>
+                                        {review?.review}
+                                    </small>
+                                </p>
                             </div>
-                            <p className="fs-5 col-md-6 mx-auto review">
-                                {review?.review}
-                            </p>
-                        </div>)
-                    }
+                        </div>
 
+                    </SwiperSlide>
+                    )
+                }
+            </Swiper>
 
-
-                </Slider>
-            </div>
         </div>
+        // </div>
     );
 };
 

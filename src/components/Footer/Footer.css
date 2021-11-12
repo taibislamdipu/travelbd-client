@@ -1,0 +1,100 @@
+footer {
+    background: black;
+    color: #fff;
+    font-size: 14px;
+}
+footer .footer-top {
+    background: black;
+    padding: 50px 0px 20px;
+}
+footer .address p {
+    font-size: 16px;
+    color: #ddd;
+    font-style: italic;
+}
+footer .social-links a {
+    font-size: 17px;
+    display: inline-block;
+    background: #28251f;
+    color: #7E7E7E;
+    line-height: 1;
+    padding: 9px 0;
+    margin-right: 5px;
+    border-radius: 100%;
+    text-align: center;
+    width: 36px;
+    height: 36px;
+    transition: 0.4s;
+}
+footer .social-links a:hover {
+    background: #7E7E7E;
+    color: #fff;
+}
+footer h4 {
+    font-size: 18px;
+    color: white;
+    padding-bottom: 12px;
+}
+footer .footer-menus {
+    margin-bottom: 30px;
+}
+footer .footer-menus ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+footer .footer-menus ul li {
+    margin-bottom: 10px;
+}
+footer .footer-menus ul i {
+    color: #ffffff;
+    font-size: 12px;
+    margin-right: 3px;
+}
+footer .footer-menus ul a {
+    color: #7E7E7E;
+    text-decoration: none;
+}
+footer .footer-menus ul a:hover {
+    color: white;
+}
+footer .newsletter form {
+    margin-top: 30px;
+    background: #3a3a3a;
+    padding: 6px 10px;
+    position: relative;
+    border-radius: 50px;
+    border: 1px solid #3a3a3a;
+}
+footer .newsletter form input[type="email"] {
+    border: 0;
+    padding: 5px;
+    background: #3a3a3a;
+    color: #fff;
+}
+footer .newsletter form input[type="email"]:focus {
+    outline: none;
+}
+footer .newsletter form input[type="submit"] {
+    position: absolute;
+    top: -1px;
+    right: -1px;
+    bottom: -1px;
+    border: 0;
+    font-size: 16px;
+    background: darkgray;
+    color: black;
+    border-bottom-right-radius: 50px;
+    border-top-right-radius: 50px;
+}
+footer .newsletter form input[type="submit"]:hover {
+    color: rgba(0, 0, 0, 0.918);
+    font-weight: bold;
+}
+.footer-bottom {
+    padding: 20px 0px;
+}
+footer .footer-bottom a {
+    color: #cddc39;
+    text-decoration: none;
+}

@@ -64,7 +64,7 @@ function App() {
 
             </Switch>
 
-            {/* <Footer></Footer> */}
+            <Footer></Footer>
           </ScrollToTop>
         </Router>
       </AuthProvider>

@@ -1,4 +1,36 @@
 
 body{
   font-family: 'Open Sans', sans-serif;
+  background-color: #F2F3F8;
+}
+
+.custom-black-btn{
+  background-color: black;
+  color: white;
+}
+
+.custom-black-btn:hover{
+  background-color: rgba(0, 0, 0, 0.800);
+  color: white;
+}
+
+.react-hook-link{
+  text-decoration: none;
+  color: black;
+}
+.react-hook-link:hover .card-title{
+  text-decoration: underline;
+  color: #424242;
+
+}
+.react-hook-link:hover .item-price{
+  color: black;
+}
+
+.product:hover img{
+  opacity: .8;
+}
+
+.product img{
+  transition: 0.3s
 }
