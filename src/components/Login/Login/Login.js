@@ -99,12 +99,12 @@ const Login = () => {
     const createNewUser = (email, password) => {
         createUserWithEmailAndPassword(auth, email, password)
             .then(result => {
-                // const user = result.user;
-                // console.log('createNewUser', user);
+                const user = result.user;
+                console.log('createNewUser', user);
                 setformErrorMsg('');
 
                 const newUser = { email, displayName: name };
-                // setUser(newUser)
+
                 // save user to the database
                 saveUser(email, name);
 

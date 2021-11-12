@@ -65,31 +65,7 @@ const Header = () => {
 
                         </ul>
 
-                        {/* <ul className=" d-flex align-items-center navbar-nav ms-auto mb-2 mb-lg-0">
-                            <li className="nav-item fw-bold">
-                                <span>
-                                    {user.email &&
 
-                                        <>
-                                            <img className="user-image rounded-circle" src={photoURL} alt="" height={50} />
-                                            <span className="pe-5 ps-2">{displayName}</span>
-                                        </>
-
-
-                                    }
-                                </span>
-
-                                {
-                                    user.email ?
-                                        <button className="btn btn-outline-secondary" onClick={logout}>
-                                            <i className="fas fa-sign-out-alt"></i> LOGOUT
-                                        </button>
-                                        :
-                                        <Link to="/login" className="nav-link cool-link">LOGIN</Link>
-                                }
-
-                            </li>
-                        </ul> */}
 
                         <ul className="d-flex align-items-center navbar-nav ms-auto mb-2 mb-lg-0">
                             {user.email ?
