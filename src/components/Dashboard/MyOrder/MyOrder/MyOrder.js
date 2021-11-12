@@ -1,4 +1,4 @@
-import { faTrashAlt } from '@fortawesome/free-solid-svg-icons';
+import { faExclamationCircle, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import { useEffect } from 'react';
@@ -15,6 +15,7 @@ const MyOrder = () => {
 
     const [myOrder, setMyOrder] = useState([]);
 
+    const [isLoading, setIsLoading] = useState(true)
 
 
     useEffect(() => {
@@ -23,6 +24,7 @@ const MyOrder = () => {
                 let result = await fetch(`https://fierce-lake-75301.herokuapp.com/myOrders?email=${email}`);
                 result = await result.json();
                 setMyOrder(result)
+                setIsLoading(false)
             }
             callApi();
 
@@ -49,71 +51,57 @@ const MyOrder = () => {
                     </div>
                 </div>
 
-                {
-                    !myOrder.length ?
-                        <h2>No data available</h2>
-                        :
-
-                        <div className="table-responsive">
-
-                            {
-                                myOrder.length === 0 ?
-
-                                    <Loading></Loading>
-
-                                    :
-
-                                    <table className="table table-hover table-bordered">
-                                        <thead className="table-dark ">
-                                            <tr className="">
-                                                {/* <th scope="col">Name</th> */}
-                                                {/* <th scope="col">No.</th> */}
-                                                <th scope="col">Image</th>
-                                                <th scope="col">Name</th>
-                                                <th scope="col">Price</th>
-                                                <th scope="col">Shipping Address</th>
-                                                <th scope="col">Status</th>
-                                                <th scope="col">Action</th>
-                                            </tr>
-                                        </thead>
-
-                                        {
-                                            myOrder.map((singleOrder) => <SingleOrder
-                                                singleOrder={singleOrder}
-
-                                            >
-
-                                            </SingleOrder>)
-                                        }
-
-                                        {/* {
-                                myOrder.map((item, index) => <tbody>
-                                    <tr>
-                                        <td>{index + 1}</td>
-                                        <td>
-                                            <img src={item?.image} height={100} alt="" />
-                                        </td>
-                                        <td>{item?.productName}</td>
-                                        <td>{item?.price}</td>
-                                        <td>{item?.address}</td>
-                                        <td>{item?.status}</td>
-                                        <td>
-                                            <button className="btn " onClick={() => handleDelete()}>
-                                                <FontAwesomeIcon icon={faTrashAlt} />
-                                            </button>
-                                        </td>
-                                    </tr>
-                                </tbody>
-
-                                )
-                            } */}
 
 
+                <div className="table-responsive">
 
-                                    </table>
-                            }
-                        </div>
-                }
+                    {
+                        isLoading ?
+
+                            <Loading></Loading>
+
+                            :
+
+                            <div>
+                                {
+                                    myOrder.length === 0 ?
+
+                                        <p className="mt-5 text-center">
+                                            <FontAwesomeIcon icon={faExclamationCircle} className="text-warning" /> No Data Available!
+                                        </p>
+
+                                        :
+
+                                        <table className="table table-hover table-bordered">
+                                            <thead className="table-dark ">
+                                                <tr className="">
+                                                    {/* <th scope="col">Name</th> */}
+                                                    {/* <th scope="col">No.</th> */}
+                                                    <th scope="col">Image</th>
+                                                    <th scope="col">Name</th>
+                                                    <th scope="col">Price</th>
+                                                    <th scope="col">Shipping Address</th>
+                                                    <th scope="col">Status</th>
+                                                    <th scope="col">Action</th>
+                                                </tr>
+                                            </thead>
+
+                                            {
+                                                myOrder.map((singleOrder) => <SingleOrder
+                                                    singleOrder={singleOrder}
+
+                                                >
+
+                                                </SingleOrder>)
+                                            }
+                                        </table>
+                                }
+                            </div>
+
+
+                    }
+                </div>
+
             </div>
         </div>
     );

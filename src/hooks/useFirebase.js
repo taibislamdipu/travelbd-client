@@ -58,13 +58,13 @@ const useFirebase = () => {
 
     // checking is admin or not
     useEffect(() => {
-        fetch(`https://fierce-lake-75301.herokuapp.com/users/${user.email}`)
+        fetch(`https://fierce-lake-75301.herokuapp.com/users/${user?.email}`)
             .then(res => res.json())
             .then(data => setAdmin(data.admin))
             .catch(err => {
                 console.log(err);
             })
-    }, [user.email])
+    }, [user?.email])
 
 
     return {

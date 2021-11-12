@@ -10,6 +10,7 @@ import { faAngleDoubleUp } from '@fortawesome/free-solid-svg-icons'
 import GoogleButton from 'react-google-button'
 
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, sendEmailVerification, sendPasswordResetEmail, updateProfile } from "firebase/auth";
+import Swal from 'sweetalert2';
 
 
 const Login = () => {
@@ -32,8 +33,6 @@ const Login = () => {
     const redirect_url = location.state?.from || '/';
 
     const [user, setUser] = useState({});
-
-
 
     const handleGoogleLogin = () => {
         signInUsingGoogle()
@@ -101,7 +100,7 @@ const Login = () => {
         createUserWithEmailAndPassword(auth, email, password)
             .then(result => {
                 // const user = result.user;
-                // console.log(user);
+                // console.log('createNewUser', user);
                 setformErrorMsg('');
 
                 const newUser = { email, displayName: name };
@@ -109,10 +108,19 @@ const Login = () => {
                 // save user to the database
                 saveUser(email, name);
 
-
                 verifyEmail();
                 setUserName();
-                alert('Your account has been created successfully. Redirecting to your destination page..');
+                // alert('Your account has been created successfully. Redirecting to your destination page..');
+
+                Swal.fire({
+                    position: 'top-end',
+                    icon: 'success',
+                    title: 'Your account has been created successfully.',
+                    showConfirmButton: false,
+                    timer: 3000
+                })
+
+
                 history.push(redirect_url);
             })
 
@@ -185,17 +193,6 @@ const Login = () => {
             .then()
     }
 
-    // const saveGoogleUser = (email, displayName) => {
-    //     const user = { email, displayName };
-    //     fetch('https://fierce-lake-75301.herokuapp.com/users', {
-    //         method: 'POST',
-    //         headers: {
-    //             'content-type': 'application/json'
-    //         },
-    //         body: JSON.stringify(user)
-    //     })
-    //         .then()
-    // }
 
 
     return (
@@ -245,7 +242,6 @@ const Login = () => {
                         <p className="py-3 mb-0 text-secondary">or</p>
 
                         <div className="">
-                            {/* <button className="btn btn-primary" onClick={handleGoogleLogin}>Google Login</button> */}
                             <GoogleButton
                                 onClick={() => handleGoogleLogin()}
                             />

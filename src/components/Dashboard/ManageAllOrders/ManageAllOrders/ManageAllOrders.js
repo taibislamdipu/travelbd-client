@@ -1,3 +1,5 @@
+import { faExclamationCircle } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
@@ -8,13 +10,15 @@ const ManageAllOrders = () => {
 
 
     const [allOrders, setAllOrders] = useState([]);
+    const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
         try {
             async function callApi() {
                 let results = await fetch('https://fierce-lake-75301.herokuapp.com/allOrders');
                 results = await results.json();
-                setAllOrders(results)
+                setAllOrders(results);
+                setIsLoading(false);
             }
             callApi();
 
@@ -33,44 +37,50 @@ const ManageAllOrders = () => {
                 <div className="table-responsive">
 
                     {
-                        allOrders.length === 0 ?
+                        isLoading ?
 
                             <Loading></Loading>
 
                             :
 
-                            <table className="table table-hover table-bordered">
-                                <thead className="table-dark">
-                                    <tr>
-                                        {/* <th scope="col">Name</th> */}
-                                        {/* <th scope="col">No.</th> */}
-                                        <th scope="col">Image</th>
-                                        <th scope="col">Name</th>
-                                        <th scope="col">Price</th>
-                                        <th scope="col">Shipping Address</th>
-                                        <th scope="col">Status</th>
-                                        <th scope="col">Action</th>
-                                    </tr>
-                                </thead>
 
+                            <div>
                                 {
-                                    allOrders.map((singleOrder) => <ManageSingleOrder
-                                        singleOrder={singleOrder}
-                                    >
+                                    allOrders.length === 0 ?
 
-                                    </ManageSingleOrder>)
+                                        <p className="mt-5 text-center">
+                                            <FontAwesomeIcon icon={faExclamationCircle} className="text-warning" />
+                                            No Data Available!
+                                        </p>
+
+                                        :
+                                        <table className="table table-hover table-bordered">
+                                            <thead className="table-dark">
+                                                <tr>
+                                                    <th scope="col">Image</th>
+                                                    <th scope="col">Name</th>
+                                                    <th scope="col">Price</th>
+                                                    <th scope="col">Shipping Address</th>
+                                                    <th scope="col">Status</th>
+                                                    <th scope="col">Action</th>
+                                                </tr>
+                                            </thead>
+
+                                            {
+                                                allOrders.map((singleOrder) => <ManageSingleOrder
+                                                    singleOrder={singleOrder}
+                                                >
+
+                                                </ManageSingleOrder>)
+                                            }
+                                        </table>
                                 }
+                            </div>
 
-
-
-
-
-
-                            </table>
                     }
                 </div>
             </div>
-        </div>
+        </div >
     );
 };
 

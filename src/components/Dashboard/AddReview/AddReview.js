@@ -10,7 +10,7 @@ const AddReview = () => {
     const { user } = useAuth();
     const { displayName, email } = user;
 
-    const [rating, setRating] = useState('');
+    const [rating, setRating] = useState(0);
 
     const { register, handleSubmit, watch, formState: { errors }, reset } = useForm();
 
@@ -21,14 +21,33 @@ const AddReview = () => {
             .then(res => {
                 if (res.data.insertedId) {
 
+                    // Swal.fire({
+                    //     position: 'top-end',
+                    //     icon: 'success',
+                    //     title: 'Thanks for your feedback!',
+                    //     showConfirmButton: false,
+                    //     timer: 3000
+                    // })
+
+                    let timerInterval
                     Swal.fire({
                         position: 'top-end',
                         icon: 'success',
-                        title: 'Thank You for your feedback!',
-                        showConfirmButton: false,
-                        timer: 3000
+                        title: 'Thanks for your feedback!',
+                        timer: 3000,
+                        timerProgressBar: true,
+                        didOpen: () => {
+                            Swal.showLoading()
+                        },
+                        willClose: () => {
+                            clearInterval(timerInterval)
+                        }
+                    }).then((result) => {
+                        /* Read more about handling dismissals below */
+                        if (result.dismiss === Swal.DismissReason.timer) {
+                            console.log('I was closed by the timer')
+                        }
                     })
-                    console.log(data);
 
                     reset();
                 }
@@ -78,9 +97,18 @@ const AddReview = () => {
                                             fullSymbol="fas fa-star"
                                             fractions={2}
                                             // readonly
-                                            onChange={(rate) => setRating(rate)}
+                                            onBlur={(rate) => setRating(rate)}
                                         />
                                     </div>
+
+                                    <div className="d-inline">
+                                        <small style={{ fontSize: 15 }}>
+                                            <p className="d-inline me-5">Bad</p>
+                                            <p className="d-inline">Very Good</p>
+                                        </small>
+                                    </div>
+
+
                                 </div>
                             </div>
 

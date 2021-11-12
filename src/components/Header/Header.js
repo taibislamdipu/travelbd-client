@@ -129,7 +129,7 @@ const Header = () => {
                                         <li className="nav-item menu-bg fw-bold">
 
                                             <Link to="/" className="nav-link " onClick={logout}>
-                                                <FontAwesomeIcon icon={faSignOutAlt} /> LOGOUT
+                                                <FontAwesomeIcon icon={faSignOutAlt} /> Logout
                                             </Link>
                                         </li>
 

@@ -3,6 +3,10 @@ import { useParams } from 'react-router';
 import { Link } from 'react-router-dom';
 import Loading from '../../Loading/Loading';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCopyright, faCaretSquareUp, faExclamationCircle } from '@fortawesome/free-solid-svg-icons'
+import Swal from 'sweetalert2';
+
 const Product = () => {
 
     const { productId } = useParams();
@@ -24,38 +28,132 @@ const Product = () => {
     }, [productId])
 
 
+    const handleMoreDetails = () => {
+        Swal.fire({
+            title: 'T-Shirt Size',
+            imageUrl: 'https://i.ibb.co/Bj9hrSC/size-chart.jpg',
+            imageAlt: 'Custom image',
+        })
+    }
+
+
     return (
-        <div className="container">
-            <div className="row my-5">
-                <div className="col-md-6">
-                    {
-                        !products.image ?
+        <div className="container my-5">
+            <div className="px-2 py-4 px-md-4 py-md-3 bg-white shadow-sm rounded">
+                <div className="row my-5">
+                    <h2 className="text-center display-4">
+                        {products?.name}
+                    </h2>
+                    <div className="col-md-6 ">
+                        {
+                            !products.image ?
 
-                            <Loading></Loading>
+                                <Loading></Loading>
 
-                            :
+                                :
 
-                            <div>
-                                <img src={products?.image} className="img-fluid" alt="" />
-                            </div>
-                    }
-                </div>
-                <div className="col-md-6">
-                    <h2>{products?.name}</h2>
-                    <h4>$ {products?.price}</h4>
-                    <Link to={`/placeOrder/${productId}`}>
-                        <button className="btn btn-primary">Buy Now</button>
-                    </Link>
+                                <div>
+                                    <img src={products?.image} className="img-fluid" alt="" />
+                                </div>
+                        }
+                    </div>
+                    <div className="col-md-6 mt-5">
+                        <h4 className="fw-bold display-6">$ {products?.price}</h4>
+                        <p className="fw-bold">{products?.name}</p>
+                        <p>
+                            {products?.description}
+                        </p>
+                        <Link to={`/placeOrder/${productId}`}>
+                            <button className="btn custom-black-btn">Buy Now</button>
+                        </Link>
+
+                        <div>
+                            <p className="fw-bold mt-5">Color</p>
+                            <button className="btn btn-outline-dark ">Black</button>
+                            <button className="btn btn-outline-success ms-2">Green</button>
+                            <button className="btn btn-outline-info ms-2">Sky</button>
+                        </div>
+
+                        <div>
+                            <p className="fw-bold mt-5">T-Shirt size</p>
+                            <button className="btn btn-outline-secondary ">S/M</button>
+                            <button className="btn btn-outline-secondary ms-2">L</button>
+                            <button className="btn btn-outline-secondary ms-2">XL</button>
+                            <button className="btn btn-outline-secondary ms-2">XXL</button>
+                            <button className="btn btn-outline-secondary ms-2">XXXL</button>
+
+                        </div>
+                        <hr />
+
+
+                        <p className="text-secondary col-md-8">
+                            <small>
+                                <FontAwesomeIcon icon={faCopyright} /> Copyright of this design is protected by in2travel.
+                                Unauthorized use or reproduction is punishable.
+                            </small>
+                        </p>
+
+                    </div>
                 </div>
             </div>
-            <div>
-                <h2>Description</h2>
-                <p>
-                    {products?.description}
+
+            {/* t-shirt table */}
+
+            <div className="mt-5 px-2 py-4 px-md-4 py-md-3 bg-white shadow-sm rounded ">
+                <p className="mt-2 fw-bold text-center">
+                    How to measure your T-Shirt size?
                 </p>
-            </div>
+                <div className="d-flex justify-content-center">
 
+                    <table class="table table-bordered w-50">
+                        <thead>
+                            <tr>
+                                <th scope="col">Size</th>
+                                <th scope="col">Front Chest (Inch)</th>
+                                <th scope="col">Height (Inch)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>S/M</td>
+                                <td>19</td>
+                                <td>27</td>
+                            </tr>
+                            <tr>
+                                <td>L</td>
+                                <td>20</td>
+                                <td>28</td>
+                            </tr>
+                            <tr>
+                                <td>XL</td>
+                                <td>21</td>
+                                <td>29</td>
+                            </tr>
+                            <tr>
+                                <td>XXL</td>
+                                <td>23</td>
+                                <td>31</td>
+                            </tr>
+                            <tr>
+                                <td>3XL</td>
+                                <td>25</td>
+                                <td>33</td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+
+                <div className="text-center ">
+                    <button className="btn custom-black-btn" onClick={() => handleMoreDetails()}>
+                        <FontAwesomeIcon icon={faExclamationCircle} />  More Details
+                    </button>
+                </div>
+
+            </div>
         </div>
+
+
     );
 };
 

@@ -26,7 +26,14 @@ const Shop = () => {
     return (
         <div className="container my-5">
             <div className="px-2 py-4 px-md-4 py-md-3 bg-white shadow-sm rounded">
-                <h2 className="text-center my-5">All T-shirt</h2>
+                <div className="my-5 text-center">
+                    <h2 className="display-4 fw-bold">Shop</h2>
+                    <p className="text-secondary">
+                        Welcome to the modern and aesthetic stores of In2travels.
+                        <br />
+                        Choose the product of your choice from an ample design collection.
+                    </p>
+                </div>
 
                 {
                     products.length === 0 ?

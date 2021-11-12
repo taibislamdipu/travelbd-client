@@ -12,6 +12,7 @@ const PlaceOrder = () => {
     const { productId } = useParams();
 
     const [products, setProducts] = useState([])
+    const [isLoading, setIsLoading] = useState(true);
 
     const { user } = useAuth();
     const { displayName, email } = user;
@@ -47,6 +48,7 @@ const PlaceOrder = () => {
                 results = await results.json();
                 results = await results.find(pd => pd?._id === productId);
                 setProducts(results);
+                setIsLoading(false);
             }
             callApi();
         } catch (error) {
@@ -58,57 +60,68 @@ const PlaceOrder = () => {
 
 
     return (
-        <div className="container">
+        <div className="container my-5">
+            <div className="px-2 py-4 px-md-4 py-md-3 bg-white shadow-sm rounded ">
+                <div className="row pb-5">
+                    <div className="col-md-6 border-end">
+                        <p className="fw-bold">Shopping Cart</p>
+                        <form className="" onSubmit={handleSubmit(onSubmit)}>
 
-            <div className="row">
-                <div className="col-md-6">
-                    <form className="mt-5" onSubmit={handleSubmit(onSubmit)}>
-
-                        <div className="form-floating mb-3">
-                            {displayName && <input className="form-control" value={displayName} {...register("name")} required />}
-                            <label>Your name</label>
-                        </div>
-
-                        <div className="form-floating mb-3">
-                            {email && <input className="form-control" value={email} {...register("email")} required />}
-                            <label>Email</label>
-                        </div>
-
-                        <div class="form-floating mb-3">
-                            <input class="form-control"  {...register("phone")} placeholder="Phone number" required />
-                            <label>Phone number</label>
-                        </div>
-                        <div class="form-floating mb-3">
-                            <input class="form-control"  {...register("address")} placeholder="Address" required />
-                            <label>Address</label>
-                        </div>
-
-
-                        <button type="submit" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                            Place Order
-                        </button>
-                    </form>
-                </div>
-
-                <div className="col-md-6">
-                    {
-                        !products?.image ?
-
-                            <Loading></Loading>
-
-                            :
-
-                            <div>
-                                <img src={products?.image} className="img-fluid" alt="" />
+                            <div className="form-floating mb-3">
+                                {displayName && <input className="form-control" value={displayName} {...register("name")} required />}
+                                <label>Your name</label>
                             </div>
-                    }
-                    <div className="text-center">
-                        <h2>{products?.name}</h2>
-                        <h4>$ {products?.price}</h4>
+
+                            <div className="form-floating mb-3">
+                                {email && <input className="form-control" value={email} {...register("email")} required />}
+                                <label>Email</label>
+                            </div>
+
+                            <div class="form-floating mb-3">
+                                <input class="form-control"  {...register("phone")} placeholder="Phone number" required />
+                                <label>Phone number</label>
+                            </div>
+                            <div class="form-floating mb-3">
+                                <input class="form-control"  {...register("address")} placeholder="Address" required />
+                                <label>Address</label>
+                            </div>
+
+
+                            <button type="submit" className="btn custom-black-btn" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                Place Order
+                            </button>
+                        </form>
+                    </div>
+
+
+                    <div className="col-md-6">
+                        <p className="fw-bold">Your order</p>
+                        <div class="card mb-3" style={{ maxWidth: 540 }}>
+                            <div class="row g-0">
+                                <div class="col-md-4">
+                                    {
+                                        isLoading ?
+
+                                            <Loading></Loading>
+
+                                            :
+
+                                            <img src={products?.image} class="img-fluid rounded-start" alt="..." />
+                                    }
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="card-body">
+                                        <h5 class="card-title">{products?.name}</h5>
+                                        <p class="card-text">
+                                            $ {products?.price}
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-
         </div>
     );
 };
