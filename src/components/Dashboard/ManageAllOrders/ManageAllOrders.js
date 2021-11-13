@@ -3,8 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
-import Loading from '../../../Loading/Loading';
-import ManageSingleOrder from '../ManageSingleOrder/ManageSingleOrder';
+import Loading from '../../Loading/Loading';
 import Swal from 'sweetalert2';
 import { useForm } from 'react-hook-form';
 
@@ -15,7 +14,7 @@ const ManageAllOrders = () => {
     const [allOrders, setAllOrders] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
 
-    const [isDelete, setIsDelete] = useState(null);
+    const [isDelete, setIsDelete] = useState(false);
 
     useEffect(() => {
         try {
@@ -31,12 +30,6 @@ const ManageAllOrders = () => {
             console.log(error);
         }
     }, [isDelete])
-
-    // useEffect(() => {
-    //     const restOrder = allOrders?.filter(order => order._id !== allOrders._id);
-    //     setAllOrders(restOrder);
-    // }, [allOrders])
-
 
     const [orderId, setOrderId] = useState("");
 
@@ -154,6 +147,7 @@ const ManageAllOrders = () => {
                                         <table className="table table-hover table-bordered">
                                             <thead className="table-dark">
                                                 <tr>
+                                                    <th scope="col">#</th>
                                                     <th scope="col">Image</th>
                                                     <th scope="col">Name</th>
                                                     <th scope="col">Price</th>
@@ -164,9 +158,9 @@ const ManageAllOrders = () => {
                                             </thead>
 
                                             {
-                                                allOrders.map((singleOrder) => <tbody>
+                                                allOrders.map((singleOrder, index) => <tbody>
                                                     <tr>
-
+                                                        <td>{index + 1}</td>
                                                         <td>
                                                             <img src={singleOrder?.image} height={100} alt="" />
                                                         </td>

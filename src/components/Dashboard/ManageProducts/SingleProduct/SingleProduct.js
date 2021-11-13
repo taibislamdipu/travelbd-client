@@ -1,15 +1,11 @@
 import { faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
-import { useForm } from 'react-hook-form';
 import Swal from 'sweetalert2';
 
 const SingleProduct = (props) => {
     const { _id, name, description, price, image } = props.product;
     const { itemNo } = props;
-
-    const { register, handleSubmit, watch, formState: { errors } } = useForm();
-    const onSubmit = data => console.log(data);
 
 
     const handleDelete = () => {

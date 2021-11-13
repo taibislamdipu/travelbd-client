@@ -4,9 +4,8 @@ import React from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
 import Swal from 'sweetalert2';
-import useAuth from '../../../../hooks/useAuth';
-import Loading from '../../../Loading/Loading';
-import SingleOrder from '../SingleOrder/SingleOrder';
+import useAuth from '../../../hooks/useAuth';
+import Loading from '../../Loading/Loading';
 
 const MyOrder = () => {
 
@@ -18,7 +17,7 @@ const MyOrder = () => {
     const [isLoading, setIsLoading] = useState(true);
 
 
-    const [isDelete, setIsDelete] = useState(null);
+    const [isDelete, setIsDelete] = useState(false);
 
 
 
@@ -71,11 +70,6 @@ const MyOrder = () => {
                         } else {
                             setIsDelete(false);
                         }
-
-
-
-
-                        // window.location.reload()
                     })
 
 
