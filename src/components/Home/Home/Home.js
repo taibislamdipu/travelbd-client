@@ -23,21 +23,15 @@ const Home = () => {
                 </div>
             </Fade>
 
-            <Fade bottom>
-                <SummerSale></SummerSale>
-            </Fade>
+            <SummerSale></SummerSale>
 
             <Fade bottom>
                 <Review></Review>
             </Fade>
 
-            <Fade bottom>
-                <Vlog></Vlog>
-            </Fade>
+            <Vlog></Vlog>
+            <ContactUs></ContactUs>
 
-            <Fade bottom>
-                <ContactUs></ContactUs>
-            </Fade>
         </div>
     );
 };
