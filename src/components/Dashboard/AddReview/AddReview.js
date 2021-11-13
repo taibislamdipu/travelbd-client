@@ -12,9 +12,10 @@ const AddReview = () => {
 
     const [rating, setRating] = useState(0);
 
-    const { register, handleSubmit, watch, formState: { errors }, reset } = useForm();
+    const { register, handleSubmit, formState: { errors }, reset } = useForm();
 
     const onSubmit = data => {
+        console.log(data);
         data.photoURL = user.photoURL;
         data.rating = rating;
         axios.post('https://fierce-lake-75301.herokuapp.com/addReview', data)
@@ -42,6 +43,7 @@ const AddReview = () => {
                     })
 
                     reset();
+                    setRating(0);
                 }
             })
     };
@@ -84,12 +86,13 @@ const AddReview = () => {
                                     <p>Your rating</p>
                                     <div className="star-rating">
                                         <Rating
-                                            initialRating={0}
+                                            initialRating={rating}
                                             emptySymbol="far fa-star"
                                             fullSymbol="fas fa-star"
                                             fractions={2}
                                             // readonly
-                                            onBlur={(rate) => setRating(rate)}
+                                            onChange={(rate) => setRating(rate)}
+
                                         />
                                     </div>
 

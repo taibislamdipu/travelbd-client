@@ -1,8 +1,12 @@
 
 
 .hero-section{
-    height: 500px;
+    height: 100vh;
     background: url(../../../images/hero-bg.jpg) no-repeat center center fixed;
     background-size: cover;
    
+}
+
+.hero-section-inner{
+    margin-top: 150px;
 }

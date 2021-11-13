@@ -1,11 +1,11 @@
+import React from 'react';
+import './Header.css';
 import { faListUl, faLocationArrow, faPlus, faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { HashLink } from 'react-router-hash-link';
-import React from 'react';
 import { Link } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
 import logo from '../../images/logo.png';
-import './Header.css';
 
 const Header = () => {
 
@@ -29,27 +29,27 @@ const Header = () => {
                     <div className="collapse navbar-collapse" id="navbarNavDropdown">
                         <ul className="navbar-nav">
                             <li className="nav-item">
-                                <Link to={"/"} className="nav-link active" aria-current="page">
+                                <Link to={"/"} className="nav-link cool-link active" aria-current="page">
                                     Home
                                 </Link>
                             </li>
                             <li className="nav-item">
-                                <Link to={"/shop"} className="nav-link">
+                                <Link to={"/shop"} className="nav-link cool-link">
                                     Shop
                                 </Link>
                             </li>
                             <li className="nav-item" >
-                                <HashLink to={"/home#review"} className="nav-link">
+                                <HashLink to={"/home#review"} className="nav-link cool-link">
                                     Review
                                 </HashLink>
                             </li>
                             <li className="nav-item">
-                                <HashLink to={"/home#vlog"} className="nav-link">
+                                <HashLink to={"/home#vlog"} className="nav-link cool-link">
                                     Vlog
                                 </HashLink>
                             </li>
                             <li className="nav-item">
-                                <HashLink to={"/home#contactUs"} className="nav-link">
+                                <HashLink to={"/home#contactUs"} className="nav-link cool-link">
                                     Contact Us
                                 </HashLink>
                             </li>
@@ -57,7 +57,7 @@ const Header = () => {
                                 user.email &&
 
                                 <li className="nav-item">
-                                    <Link to={"/dashboard"} className="nav-link">
+                                    <Link to={"/dashboard"} className="nav-link cool-link">
                                         Dashboard
                                     </Link>
                                 </li>

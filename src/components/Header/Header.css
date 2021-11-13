@@ -15,3 +15,27 @@
 .dropdown-menu {
     width: 300px !important;
 }
+
+
+/* navbar on hove style start*/
+
+.cool-link {
+    display: inline-block;
+    text-decoration: none;
+}
+
+.cool-link::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #40461C;
+    transition: width .4s;
+}
+
+.cool-link:hover::after {
+    width: 100%;
+    transition: width .4s;
+}
+
+/* navbar on hove style end*/

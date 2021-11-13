@@ -1,3 +1,5 @@
+import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import { Link } from 'react-router-dom';
 
@@ -14,7 +16,8 @@ const SummerSale = () => {
                         <p className="display-4 fw-bold">50% or more off</p>
 
                         <Link to={'/shop'}>
-                            <button className="btn custom-black-btn">Shop Now</button>
+                            <button className="btn custom-black-btn">
+                                <FontAwesomeIcon icon={faShoppingCart} /> Shop Now</button>
                         </Link>
                     </div>
                 </div>
