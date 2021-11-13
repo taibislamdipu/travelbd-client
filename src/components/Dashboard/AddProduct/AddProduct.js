@@ -13,12 +13,24 @@ const AddProduct = () => {
             .then(res => {
                 if (res.data.insertedId) {
 
+                    let timerInterval
                     Swal.fire({
                         position: 'top-end',
                         icon: 'success',
-                        title: 'Your work has been saved',
-                        showConfirmButton: false,
-                        timer: 1500
+                        title: 'Product has been added successfully!',
+                        timer: 3000,
+                        timerProgressBar: true,
+                        didOpen: () => {
+                            Swal.showLoading()
+                        },
+                        willClose: () => {
+                            clearInterval(timerInterval)
+                        }
+                    }).then((result) => {
+                        /* Read more about handling dismissals below */
+                        if (result.dismiss === Swal.DismissReason.timer) {
+                            console.log('I was closed by the timer')
+                        }
                     })
 
                     reset();
@@ -80,7 +92,7 @@ const AddProduct = () => {
                         </div>
 
 
-                        <button type="submit" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        <button type="submit" className="btn custom-black-btn" data-bs-toggle="modal" data-bs-target="#exampleModal">
                             Add Product
                         </button>
                     </form>

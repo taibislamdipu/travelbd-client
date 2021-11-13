@@ -12,6 +12,8 @@ const ManageAllOrders = () => {
     const [allOrders, setAllOrders] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
 
+    const [singleBooking, setSingleBooking] = useState('');
+
     useEffect(() => {
         try {
             async function callApi() {
@@ -25,9 +27,12 @@ const ManageAllOrders = () => {
         } catch (error) {
             console.log(error);
         }
-    }, [])
+    }, [singleBooking])
 
-
+    // useEffect(() => {
+    //     const restOrder = allOrders?.filter(order => order._id !== allOrders._id);
+    //     setAllOrders(restOrder);
+    // }, [allOrders])
 
 
     return (
@@ -71,6 +76,7 @@ const ManageAllOrders = () => {
                                             {
                                                 allOrders.map((singleOrder) => <ManageSingleOrder
                                                     singleOrder={singleOrder}
+                                                    key={singleOrder._id}
                                                 >
 
                                                 </ManageSingleOrder>)

@@ -31,7 +31,25 @@ const ManageSingleOrder = (props) => {
             .then((res) => res.json())
             .then((result) => {
                 if (result.modifiedCount === 1) {
-                    alert('status updated successfully');
+                    let timerInterval
+                    Swal.fire({
+                        position: 'top-end',
+                        icon: 'success',
+                        title: 'Status updated successfully',
+                        timer: 3000,
+                        timerProgressBar: true,
+                        didOpen: () => {
+                            Swal.showLoading()
+                        },
+                        willClose: () => {
+                            clearInterval(timerInterval)
+                        }
+                    }).then((result) => {
+                        /* Read more about handling dismissals below */
+                        if (result.dismiss === Swal.DismissReason.timer) {
+                            console.log('I was closed by the timer')
+                        }
+                    })
                 }
             });
     };
@@ -95,8 +113,8 @@ const ManageSingleOrder = (props) => {
                             {...register("newStatus")}
                         >
                             <option value={status}>{status}</option>
-                            <option value="Approve">Approve</option>
-                            <option value="Done">Done</option>
+                            <option value="Approved">Approved</option>
+                            <option value="Shipped">Shipped</option>
                         </select>
                         {/* <input type="submit" /> */}
                         <button type="submit" className="btn custom-black-btn mt-3">Submit</button>

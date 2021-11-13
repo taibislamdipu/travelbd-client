@@ -2,8 +2,10 @@
 
 
 .review-section{
-    /* background: url(../../../images/reviewBgGif1.gif) no-repeat center center fixed; */
+    background: url(../../../images/reviewbg2.jpg) no-repeat center center fixed;
     background-size: cover;
+    height: 600px;
+    
 }
 
 .star-rating{

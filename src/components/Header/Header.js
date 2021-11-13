@@ -16,47 +16,47 @@ const Header = () => {
 
     return (
         <div>
-            <nav class="navbar navbar-expand-lg navbar-light bg-white">
-                <div class="container">
+            <nav className="navbar navbar-expand-lg navbar-light bg-white">
+                <div className="container">
                     <Link to={'/'} className="navbar-brand">
                         <div>
                             <img src={logo} alt="..." />
                         </div>
                     </Link>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
+                    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                        <span className="navbar-toggler-icon"></span>
                     </button>
-                    <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                        <ul class="navbar-nav">
-                            <li class="nav-item">
+                    <div className="collapse navbar-collapse" id="navbarNavDropdown">
+                        <ul className="navbar-nav">
+                            <li className="nav-item">
                                 <Link to={"/"} className="nav-link active" aria-current="page">
                                     Home
                                 </Link>
                             </li>
-                            <li class="nav-item">
+                            <li className="nav-item">
                                 <Link to={"/shop"} className="nav-link">
                                     Shop
                                 </Link>
                             </li>
-                            <li class="nav-item" >
+                            <li className="nav-item" >
                                 <HashLink to={"/home#review"} className="nav-link">
                                     Review
                                 </HashLink>
                             </li>
-                            <li class="nav-item">
-                                <Link to={"/"} className="nav-link">
-                                    Blog
-                                </Link>
+                            <li className="nav-item">
+                                <HashLink to={"/home#vlog"} className="nav-link">
+                                    Vlog
+                                </HashLink>
                             </li>
-                            <li class="nav-item">
-                                <Link to={"/"} className="nav-link">
+                            <li className="nav-item">
+                                <HashLink to={"/home#contactUs"} className="nav-link">
                                     Contact Us
-                                </Link>
+                                </HashLink>
                             </li>
                             {
                                 user.email &&
 
-                                <li class="nav-item">
+                                <li className="nav-item">
                                     <Link to={"/dashboard"} className="nav-link">
                                         Dashboard
                                     </Link>

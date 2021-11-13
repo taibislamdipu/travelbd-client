@@ -105,7 +105,7 @@ const Product = () => {
                 </p>
                 <div className="d-flex justify-content-center">
 
-                    <table class="table table-bordered w-50">
+                    <table className="table table-bordered w-50">
                         <thead>
                             <tr>
                                 <th scope="col">Size</th>

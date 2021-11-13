@@ -21,20 +21,12 @@ const AddReview = () => {
             .then(res => {
                 if (res.data.insertedId) {
 
-                    // Swal.fire({
-                    //     position: 'top-end',
-                    //     icon: 'success',
-                    //     title: 'Thanks for your feedback!',
-                    //     showConfirmButton: false,
-                    //     timer: 3000
-                    // })
-
                     let timerInterval
                     Swal.fire({
                         position: 'top-end',
                         icon: 'success',
                         title: 'Thanks for your feedback!',
-                        timer: 3000,
+                        timer: 5000,
                         timerProgressBar: true,
                         didOpen: () => {
                             Swal.showLoading()

@@ -42,15 +42,15 @@ const Shop = () => {
 
                         :
 
-                        <div class="row row-cols-1 row-cols-md-3 g-4">
+                        <div className="row row-cols-1 row-cols-md-3 g-4">
 
                             {
-                                products.map(pd => <div class="col">
+                                products.map(pd => <div className="col">
                                     <Link to={`/product/${pd?._id}`} className="react-hook-link">
-                                        <div class="card border-0 h-100 product">
-                                            <img src={pd?.image} class="card-img-top" alt="..." />
-                                            <div class="card-body">
-                                                <p class="card-title fw-bold">{pd?.name}</p>
+                                        <div className="card border-0 h-100 product">
+                                            <img src={pd?.image} className="card-img-top" alt="..." />
+                                            <div className="card-body">
+                                                <p className="card-title fw-bold">{pd?.name}</p>
                                                 <p className="item-price fw-bold">${pd?.price}</p>
                                                 <div className="">
                                                     <button className="btn custom-black-btn">

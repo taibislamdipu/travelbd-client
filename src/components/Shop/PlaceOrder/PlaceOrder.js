@@ -29,12 +29,25 @@ const PlaceOrder = () => {
         axios.post('https://fierce-lake-75301.herokuapp.com/addOrder', data)
             .then(res => {
                 if (res.data.insertedId) {
+                    let timerInterval
                     Swal.fire({
                         position: 'top-end',
                         icon: 'success',
-                        title: 'Your order has been placed successfully!',
-                        showConfirmButton: false,
-                        timer: 4000
+                        title: 'Thank you!',
+                        text: 'Your order has been placed successfully',
+                        timer: 5000,
+                        timerProgressBar: true,
+                        didOpen: () => {
+                            Swal.showLoading()
+                        },
+                        willClose: () => {
+                            clearInterval(timerInterval)
+                        }
+                    }).then((result) => {
+                        /* Read more about handling dismissals below */
+                        if (result.dismiss === Swal.DismissReason.timer) {
+                            console.log('I was closed by the timer')
+                        }
                     })
                     reset();
                 }
@@ -77,12 +90,12 @@ const PlaceOrder = () => {
                                 <label>Email</label>
                             </div>
 
-                            <div class="form-floating mb-3">
-                                <input class="form-control"  {...register("phone")} placeholder="Phone number" required />
+                            <div className="form-floating mb-3">
+                                <input className="form-control"  {...register("phone")} placeholder="Phone number" required />
                                 <label>Phone number</label>
                             </div>
-                            <div class="form-floating mb-3">
-                                <input class="form-control"  {...register("address")} placeholder="Address" required />
+                            <div className="form-floating mb-3">
+                                <input className="form-control"  {...register("address")} placeholder="Address" required />
                                 <label>Address</label>
                             </div>
 
@@ -96,9 +109,9 @@ const PlaceOrder = () => {
 
                     <div className="col-md-6">
                         <p className="fw-bold">Your order</p>
-                        <div class="card mb-3" style={{ maxWidth: 540 }}>
-                            <div class="row g-0">
-                                <div class="col-md-4">
+                        <div className="card mb-3" style={{ maxWidth: 540 }}>
+                            <div className="row g-0">
+                                <div className="col-md-4">
                                     {
                                         isLoading ?
 
@@ -106,13 +119,13 @@ const PlaceOrder = () => {
 
                                             :
 
-                                            <img src={products?.image} class="img-fluid rounded-start" alt="..." />
+                                            <img src={products?.image} className="img-fluid rounded-start" alt="..." />
                                     }
                                 </div>
-                                <div class="col-md-8">
-                                    <div class="card-body">
-                                        <h5 class="card-title">{products?.name}</h5>
-                                        <p class="card-text">
+                                <div className="col-md-8">
+                                    <div className="card-body">
+                                        <h5 className="card-title">{products?.name}</h5>
+                                        <p className="card-text">
                                             $ {products?.price}
                                         </p>
                                     </div>

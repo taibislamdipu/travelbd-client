@@ -15,8 +15,8 @@ const HeroSection = () => {
                             </h1>
                             <p>
                                 Get a faster travel T-Shirt on every tour, hiking or surfing, for any travel activities.                        </p>
-                            <Link to="/shop">
-                                <button className="btn btn-primary">Shop</button>
+                            <Link to="/shop" >
+                                <button className="btn custom-black-btn">Shop</button>
                             </Link>
                         </div>
                         <div className="col-md-6">

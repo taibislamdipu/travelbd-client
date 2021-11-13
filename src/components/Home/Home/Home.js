@@ -4,6 +4,8 @@ import HeroSection from '../HeroSection/HeroSection';
 import quotesImg from '../../../images/qoutes-img.png'
 import Review from '../Review/Review';
 import ContactUs from '../ContactUs/ContactUs/ContactUs';
+import SummerSale from '../SummerSale/SummerSale';
+import Vlog from '../Vlog/Vlog';
 
 const Home = () => {
     return (
@@ -15,7 +17,9 @@ const Home = () => {
                     <img src={quotesImg} className="img-fluid" alt="" />
                 </div>
             </div>
+            <SummerSale></SummerSale>
             <Review></Review>
+            <Vlog></Vlog>
             <ContactUs></ContactUs>
         </div>
     );

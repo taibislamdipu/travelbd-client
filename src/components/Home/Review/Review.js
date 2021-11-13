@@ -33,8 +33,8 @@ const Review = () => {
 
 
     return (
-        <div className="container review-section my-5 text-center" id="review">
-            <h2 className="text-center">Review</h2>
+        <div className="container-fluid review-section my-5 text-center" id="review">
+            <h2 className="text-center display-4 fw-bold pt-5 text-white">Customer Review</h2>
 
             {/* <div className=""> */}
 
