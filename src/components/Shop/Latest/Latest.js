@@ -3,6 +3,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Loading from '../../Loading/Loading';
+import Fade from 'react-reveal/Fade';
+
 
 const Latest = () => {
 
@@ -50,42 +52,41 @@ const Latest = () => {
                                     </p>
 
                                     :
-
                                     <div className="row row-cols-1 row-cols-md-3 g-4">
+                                        <Fade bottom>
 
-                                        {
-                                            products.map(pd => <div className="col">
-                                                <Link to={`/product/${pd?._id}`} className="react-hook-link">
-                                                    <div className="card border-0 h-100 product">
-                                                        {
-                                                            !pd?.image ?
-                                                                <Loading></Loading>
+                                            {
+                                                products.map(pd => <div className="col">
+                                                    <Link to={`/product/${pd?._id}`} className="react-hook-link">
+                                                        <div className="card border-0 h-100 product">
+                                                            {
+                                                                !pd?.image ?
+                                                                    <Loading></Loading>
 
-                                                                :
+                                                                    :
 
-                                                                <img src={pd?.image} className="card-img-top" alt="..." />
-                                                        }
-                                                        <div className="card-body">
-                                                            <p className="card-title fw-bold">{pd?.name}</p>
-                                                            <p className="item-price fw-bold">$ {pd?.price}</p>
-                                                            <div className="">
-                                                                <button className="btn custom-black-btn">
-                                                                    <FontAwesomeIcon icon={faShoppingCart} /> Buy Now
-                                                                </button>
+                                                                    <img src={pd?.image} className="card-img-top" alt="..." />
+                                                            }
+                                                            <div className="card-body">
+                                                                <p className="card-title fw-bold">{pd?.name}</p>
+                                                                <p className="item-price fw-bold">$ {pd?.price}</p>
+                                                                <div className="">
+                                                                    <button className="btn custom-black-btn">
+                                                                        <FontAwesomeIcon icon={faShoppingCart} /> Buy Now
+                                                                    </button>
+                                                                </div>
                                                             </div>
                                                         </div>
-                                                    </div>
-                                                </Link>
-                                            </div>
-                                            )
-                                        }
+                                                    </Link>
+                                                </div>
+                                                )
+                                            }
 
+                                        </Fade>
                                     </div>
                             }
 
-                            {/* <Link to={'/'} className="py-5 text-center">
-                                <button className="btn custom-black-btn">See All T-Shirt</button>
-                            </Link> */}
+
                         </div>
                 }
 

@@ -6,21 +6,38 @@ import Review from '../Review/Review';
 import ContactUs from '../ContactUs/ContactUs/ContactUs';
 import SummerSale from '../SummerSale/SummerSale';
 import Vlog from '../Vlog/Vlog';
+import Fade from 'react-reveal/Fade';
 
 const Home = () => {
     return (
         <div>
             <HeroSection></HeroSection>
+
             <Latest></Latest>
-            <div className="container-fluid py-5 px-0">
-                <div>
-                    <img src={quotesImg} className="img-fluid" alt="" />
+
+            <Fade bottom>
+                <div className="container-fluid py-5 px-0">
+                    <div>
+                        <img src={quotesImg} className="img-fluid" alt="" />
+                    </div>
                 </div>
-            </div>
-            <SummerSale></SummerSale>
-            <Review></Review>
-            <Vlog></Vlog>
-            <ContactUs></ContactUs>
+            </Fade>
+
+            <Fade bottom>
+                <SummerSale></SummerSale>
+            </Fade>
+
+            <Fade bottom>
+                <Review></Review>
+            </Fade>
+
+            <Fade bottom>
+                <Vlog></Vlog>
+            </Fade>
+
+            <Fade bottom>
+                <ContactUs></ContactUs>
+            </Fade>
         </div>
     );
 };
