@@ -23,9 +23,6 @@ Server side code: https://github.com/programming-hero-web-course-4/niche-website
 * Smooth animation
 
 ## Screenshots
-### 1) Hero Section
-![alt preview](https://i.ibb.co/17Rbynh/In2-Travel-Prem-2.png)
-
 ### 2) Home
 ![alt preview](https://i.ibb.co/19Qn4xW/In2-Travel-home.png)
 
