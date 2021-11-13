@@ -60,7 +60,7 @@ const Review = () => {
 
                                     <div className="">
                                         <img src={review?.photoURL} className="mt-5 text-center review-img rounded-circle" alt="" />
-                                        <div className="shadow-sm  bg-white rounded py-5">
+                                        <div className="shadow-sm  bg-white rounded py-5 review-container">
                                             <h6 className="fw-bold">{review?.name}</h6>
                                             <div className="star-rating">
                                                 <Rating

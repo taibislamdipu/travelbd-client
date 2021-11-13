@@ -1,5 +1,4 @@
 import React from 'react';
-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPhoneAlt, faMobileAlt, faFax, faEnvelope } from '@fortawesome/free-solid-svg-icons'
 import MyForm from '../MyForm/MyForm';
@@ -53,7 +52,7 @@ const ContactUs = () => {
                     </div>
                 </div>
             </div>
-        </div >
+        </div>
     );
 };
 

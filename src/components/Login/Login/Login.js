@@ -211,16 +211,22 @@ const Login = () => {
                         {!isLogin &&
                             <div className="mb-3">
                                 <label for="InputName" className="form-label ">Name</label>
+
                                 <input type="text" onBlur={handleNameChange} className="form-control" id="InputName" aria-describedby="nameHelp" />
+
                             </div>
                         }
                         <div className="mb-3">
                             <label for="InputEmail" className="form-label">Email address</label>
+
                             <input type="email" onBlur={handleEmailChange} className="form-control" id="InputEmail" aria-describedby="emailHelp" required />
+
                         </div>
                         <div className="mb-3">
                             <label for="InputPassword" className="form-label">Password</label>
+
                             <input type="password" onBlur={handlePasswordChange} className="form-control" id="InputPassword" />
+
                         </div>
                         <div className="form-check">
                             <input onChange={toggleLogin} type="checkbox" className="form-check-input" id="exampleCheck1" />

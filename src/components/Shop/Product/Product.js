@@ -3,7 +3,7 @@ import { useParams } from 'react-router';
 import { Link } from 'react-router-dom';
 import Loading from '../../Loading/Loading';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCopyright, faExclamationCircle } from '@fortawesome/free-solid-svg-icons'
+import { faCopyright, faExclamationCircle, faShoppingCart } from '@fortawesome/free-solid-svg-icons'
 import Swal from 'sweetalert2';
 import Fade from 'react-reveal/Fade';
 
@@ -77,7 +77,9 @@ const Product = () => {
                                     </p>
                                 </Fade>
                                 <Link to={`/placeOrder/${productId}`}>
-                                    <button className="btn custom-black-btn">Buy Now</button>
+                                    <button className="btn custom-black-btn">
+                                        <FontAwesomeIcon icon={faShoppingCart} /> Buy Now
+                                    </button>
                                 </Link>
                                 <div>
                                     <p className="fw-bold mt-5">Color</p>

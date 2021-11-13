@@ -17,6 +17,8 @@ import MakeAdmin from '../MakeAdmin/MakeAdmin';
 import useAuth from '../../../hooks/useAuth';
 import ManageProducts from '../ManageProducts/ManageProducts/ManageProducts';
 import MyOrder from '../MyOrder/MyOrder';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faMoneyCheckAlt, faFeatherAlt, faShoppingCart, faSignOutAlt, faPlusCircle, faUserPlus, faTshirt } from '@fortawesome/free-solid-svg-icons';
 
 const Dashboard = () => {
 
@@ -39,15 +41,19 @@ const Dashboard = () => {
                                     <div className="">
                                         <Link to={`${url}`} className="nav-link menu-bg react-hook-link">
                                             <li className="dashboard-menu nav-item">
-                                                My order
+                                                <FontAwesomeIcon icon={faShoppingCart} /> My order
                                             </li>
                                         </Link>
 
                                         <Link to={`${url}/payment`} className="nav-link menu-bg react-hook-link">
-                                            <li className="dashboard-menu nav-item">Payment</li>
+                                            <li className="dashboard-menu nav-item">
+                                                <FontAwesomeIcon icon={faMoneyCheckAlt} /> Payment
+                                            </li>
                                         </Link>
                                         <Link to={`${url}/review`} className="nav-link menu-bg react-hook-link">
-                                            <li className="dashboard-menu nav-item">Add Review</li>
+                                            <li className="dashboard-menu nav-item">
+                                                <FontAwesomeIcon icon={faFeatherAlt} /> Add Review
+                                            </li>
                                         </Link>
                                     </div>
                                 }
@@ -55,19 +61,28 @@ const Dashboard = () => {
                                 {admin &&
                                     <div>
                                         <Link to={`${url}/manageAllOrders`} className="nav-link menu-bg react-hook-link">
-                                            <li className="dashboard-menu nav-item">Manage All Orders</li>
+                                            <li className="dashboard-menu nav-item">
+                                                <FontAwesomeIcon icon={faShoppingCart} /> Manage All Orders
+                                            </li>
                                         </Link>
 
                                         <Link to={`${url}/addProduct`} className="nav-link menu-bg react-hook-link">
-                                            <li className="dashboard-menu">Add A Product</li>
+                                            <li className="dashboard-menu">
+                                                <FontAwesomeIcon icon={faPlusCircle} /> Add A Product
+                                            </li>
+
                                         </Link>
 
                                         <Link to={`${url}/makeAdmin`} className="nav-link menu-bg react-hook-link">
-                                            <li className="dashboard-menu">Make Admin</li>
+                                            <li className="dashboard-menu">
+                                                <FontAwesomeIcon icon={faUserPlus} /> Make Admin
+                                            </li>
                                         </Link>
 
                                         <Link to={`${url}/manageProducts`} className="nav-link menu-bg react-hook-link">
-                                            <li className="dashboard-menu">Manage Products</li>
+                                            <li className="dashboard-menu">
+                                                <FontAwesomeIcon icon={faTshirt} /> Manage Products
+                                            </li>
                                         </Link>
                                     </div>
 
@@ -75,7 +90,9 @@ const Dashboard = () => {
                                 }
 
                             </ul>
-                            <button className="btn btn-danger mt-5 inline" onClick={logout}>Logout</button>
+                            <button className="btn btn-danger mt-5 inline" onClick={logout}>
+                                <FontAwesomeIcon icon={faSignOutAlt} /> Logout
+                            </button>
                         </div>
                     </div>
 

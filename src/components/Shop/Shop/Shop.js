@@ -1,3 +1,5 @@
+import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Loading from '../../Loading/Loading';
@@ -54,7 +56,7 @@ const Shop = () => {
                                                 <p className="item-price fw-bold">${pd?.price}</p>
                                                 <div className="">
                                                     <button className="btn custom-black-btn">
-                                                        Buy Now
+                                                        <FontAwesomeIcon icon={faShoppingCart} /> Buy Now
                                                     </button>
                                                 </div>
                                             </div>

@@ -1,6 +1,7 @@
+import React from 'react';
+import './SummerSale.css'
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import React from 'react';
 import { Link } from 'react-router-dom';
 import Fade from 'react-reveal/Fade';
 
@@ -12,7 +13,7 @@ const SummerSale = () => {
             <div className="row">
 
                 <Fade left>
-                    <div className="col-md-6 bg-info d-flex justify-content-center align-items-center">
+                    <div className="col-md-6 bg-info d-flex justify-content-center align-items-center summer-sale-container">
                         <div className="text-white">
                             <h2 className="display-2 fw-bold text-uppercase">Summer Sale</h2>
                             <h3>On Summer Collections</h3>

@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import './Latest.css';
 import { faExclamationCircle, faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Link } from 'react-router-dom';
@@ -66,7 +65,7 @@ const Latest = () => {
 
                                                                     :
 
-                                                                    <img src={pd?.image} className="card-img-top product-img" alt="..." />
+                                                                    <img src={pd?.image} className="card-img-top " alt="..." />
                                                             }
                                                             <div className="card-body">
                                                                 <p className="card-title fw-bold">{pd?.name}</p>
