@@ -1,6 +1,6 @@
 import { faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import React from 'react';
+import React, { useState } from 'react';
 import Swal from 'sweetalert2';
 import useAuth from '../../../../hooks/useAuth';
 
@@ -13,6 +13,8 @@ const SingleOrder = (props) => {
     // using context api for set user phone number
     const { setUserPhoneNumber } = useAuth();
     setUserPhoneNumber(phone);
+
+    const [isDelete, setIsDelete] = useState(null);
 
 
     const handleDelete = () => {
@@ -40,7 +42,9 @@ const SingleOrder = (props) => {
                                 'success'
                             )
                         }
-                        window.location.reload()
+
+
+                        // window.location.reload()
                     })
 
 

@@ -15,7 +15,13 @@ const MyOrder = () => {
 
     const [myOrder, setMyOrder] = useState([]);
 
-    const [isLoading, setIsLoading] = useState(true)
+    const [isLoading, setIsLoading] = useState(true);
+
+
+    const [isDelete, setIsDelete] = useState(null);
+
+
+
 
 
     useEffect(() => {
@@ -31,7 +37,55 @@ const MyOrder = () => {
         } catch (error) {
             console.log(error);
         }
-    }, [email])
+    }, [email, isDelete])
+
+
+    const handleDelete = (id) => {
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+
+                const url = `https://fierce-lake-75301.herokuapp.com/allOrders/${id}`
+                fetch(url, {
+                    method: 'DELETE'
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        if (data.deletedCount) {
+                            Swal.fire(
+                                'Deleted!',
+                                'Your Order has been Canceled.',
+                                'success'
+                            )
+
+                            const remainingOrder = myOrder.filter(order => order._id !== id);
+                            setMyOrder(remainingOrder);
+                            setIsDelete(true);
+                        } else {
+                            setIsDelete(false);
+                        }
+
+
+
+
+                        // window.location.reload()
+                    })
+
+
+
+            }
+
+        })
+    }
+
+
 
     return (
         <div className="container px-0">
@@ -87,12 +141,23 @@ const MyOrder = () => {
                                             </thead>
 
                                             {
-                                                myOrder.map((singleOrder) => <SingleOrder
-                                                    singleOrder={singleOrder}
-
-                                                >
-
-                                                </SingleOrder>)
+                                                myOrder.map((singleOrder) => <tbody>
+                                                    <tr>
+                                                        <td>
+                                                            <img src={singleOrder?.image} height={100} alt="" />
+                                                        </td>
+                                                        <td>{singleOrder?.productName}</td>
+                                                        <td>{singleOrder?.price}</td>
+                                                        <td>{singleOrder?.address}</td>
+                                                        <td>{singleOrder?.status}</td>
+                                                        <td>
+                                                            <button className="btn " onClick={() => handleDelete(singleOrder?._id)}>
+                                                                <FontAwesomeIcon icon={faTrashAlt} />
+                                                            </button>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                                )
                                             }
                                         </table>
                                 }
