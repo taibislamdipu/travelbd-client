@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import './Latest.css';
 import { faExclamationCircle, faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Link } from 'react-router-dom';
@@ -30,6 +31,8 @@ const Latest = () => {
         }
     }, [])
 
+
+
     return (
         <div className="container my-5">
             <div className="px-2 py-4 px-md-4 py-md-3 bg-white shadow-sm rounded">
@@ -58,7 +61,7 @@ const Latest = () => {
 
                                             {
                                                 products.map(pd => <div className="col">
-                                                    <Link to={`/product/${pd?._id}`} className="react-hook-link">
+                                                    <Link to={`/product/${pd?._id}`} className="react-hook-link ">
                                                         <div className="card border-0 h-100 product">
                                                             {
                                                                 !pd?.image ?
@@ -68,15 +71,17 @@ const Latest = () => {
 
                                                                     <img src={pd?.image} className="card-img-top " alt="..." />
                                                             }
-                                                            <div className="card-body">
+                                                            <div className="card-body ">
                                                                 <p className="card-title fw-bold">{pd?.name}</p>
                                                                 <p className="item-price fw-bold">$ {pd?.price}</p>
                                                                 <div className="">
-                                                                    <button className="btn custom-black-btn">
+                                                                    <button className="btn custom-black-btn buy-now-btn">
                                                                         <FontAwesomeIcon icon={faShoppingCart} /> Buy Now
                                                                     </button>
+
                                                                 </div>
                                                             </div>
+
                                                         </div>
                                                     </Link>
                                                 </div>

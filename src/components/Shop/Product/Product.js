@@ -7,6 +7,7 @@ import { faCopyright, faExclamationCircle, faShoppingCart } from '@fortawesome/f
 import Swal from 'sweetalert2';
 import Fade from 'react-reveal/Fade';
 import Bounce from "react-reveal/Bounce";
+import Heart from "react-animated-heart";
 
 
 const Product = () => {
@@ -42,6 +43,8 @@ const Product = () => {
         })
     }
 
+    // love button
+    const [isClick, setClick] = useState(false);
 
     return (
         <div className="container my-5">
@@ -82,6 +85,7 @@ const Product = () => {
                                     <button className="btn custom-black-btn">
                                         <FontAwesomeIcon icon={faShoppingCart} /> Buy Now
                                     </button>
+
                                 </Link>
                                 <div>
                                     <p className="fw-bold mt-5">Color</p>
@@ -89,6 +93,7 @@ const Product = () => {
                                     <button className="btn btn-outline-success ms-2">Green</button>
                                     <button className="btn btn-outline-info ms-2">Turquoise</button>
                                 </div>
+
 
                                 <div>
                                     <p className="fw-bold mt-5">T-Shirt size</p>
@@ -99,6 +104,9 @@ const Product = () => {
                                     <button className="btn btn-outline-secondary ms-2">XXXL</button>
 
                                 </div>
+                                <p className=" fw-bold d-flex align-items-center">
+                                    Love this product:<Heart isClick={isClick} onClick={() => setClick(!isClick)} />
+                                </p>
                                 <hr />
 
 

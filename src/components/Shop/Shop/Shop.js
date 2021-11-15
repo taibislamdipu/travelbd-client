@@ -26,6 +26,8 @@ const Shop = () => {
         }
     }, [])
 
+
+
     return (
         <div className="container my-5">
             <div className="px-2 py-4 px-md-4 py-md-3 bg-white shadow-sm rounded">
@@ -58,7 +60,7 @@ const Shop = () => {
                                                 <p className="card-title fw-bold">{pd?.name}</p>
                                                 <p className="item-price fw-bold">${pd?.price}</p>
                                                 <div className="">
-                                                    <button className="btn custom-black-btn">
+                                                    <button className="btn custom-black-btn buy-now-btn">
                                                         <FontAwesomeIcon icon={faShoppingCart} /> Buy Now
                                                     </button>
                                                 </div>

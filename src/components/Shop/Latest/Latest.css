@@ -1,0 +1,16 @@
+
+.buy-now-btn {
+    opacity: 0;
+  }
+/* 
+
+.product:hover + .buy-now-btn {
+    display: inline-block;
+  } */
+
+
+.card:hover .buy-now-btn{
+    opacity: 1;
+    transition: 0.3s
+}
+
