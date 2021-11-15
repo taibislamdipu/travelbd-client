@@ -6,6 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCopyright, faExclamationCircle, faShoppingCart } from '@fortawesome/free-solid-svg-icons'
 import Swal from 'sweetalert2';
 import Fade from 'react-reveal/Fade';
+import Bounce from "react-reveal/Bounce";
 
 
 const Product = () => {
@@ -37,6 +38,7 @@ const Product = () => {
             title: 'T-Shirt Size',
             imageUrl: 'https://i.ibb.co/Bj9hrSC/size-chart.jpg',
             imageAlt: 'Custom image',
+            confirmButtonColor: 'black'
         })
     }
 
@@ -55,11 +57,11 @@ const Product = () => {
 
                         <div className="row my-5">
 
-                            <Fade>
+                            <Bounce bottom cascade>
                                 <h2 className="text-center display-4">
                                     {products?.name}
                                 </h2>
-                            </Fade>
+                            </Bounce>
 
                             <div className="col-md-6 ">
                                 <Fade >

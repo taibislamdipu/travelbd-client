@@ -5,8 +5,9 @@ Travel T-Shirt niche related MERN Stack website build with React.js along with C
 
 ## Website : https://travelbd-tshirt.web.app/
 
-Client side code: https://github.com/programming-hero-web-course-4/niche-website-client-side-taibislamdipu
-Server side code: https://github.com/programming-hero-web-course-4/niche-website-server-side-taibislamdipu
+Client side code: https://github.com/taibislamdipu/travelbd-client
+
+Server side code: https://github.com/taibislamdipu/travelbd-server
 
 ## Website Features
 
@@ -24,7 +25,7 @@ Server side code: https://github.com/programming-hero-web-course-4/niche-website
 * Smooth animation
 
 ## Screenshots
-### 2) Home
+### 1) Home
 ![alt preview](https://i.ibb.co/19Qn4xW/In2-Travel-home.png)
 
 

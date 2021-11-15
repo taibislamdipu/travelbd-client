@@ -1,13 +1,17 @@
 import React from 'react';
 import './Vlog.css';
 import Fade from 'react-reveal/Fade';
+import Bounce from "react-reveal/Bounce";
+
 
 
 const Vlog = () => {
 
     return (
         <div className="container " id="vlog">
-            <h2 className="display-4 fw-bold text-center my-5">Vlog</h2>
+            <Bounce bottom cascade>
+                <h2 className="display-4 fw-bold text-center my-5">Vlog</h2>
+            </Bounce>
             <div class="row row-cols-1 row-cols-md-3 g-4">
 
                 <Fade left>

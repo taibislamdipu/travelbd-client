@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { HashLink } from 'react-router-hash-link';
 import { Link } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
-import logo from '../../images/logo.png';
+import logo from '../../images/logo3.png';
 
 const Header = () => {
 
@@ -16,7 +16,7 @@ const Header = () => {
 
     return (
         <div>
-            <nav className="navbar navbar-expand-lg navbar-light bg-white">
+            <nav className="navbar navbar-expand-lg navbar-dark">
                 <div className="container">
                     <Link to={'/'} className="navbar-brand">
                         <div>
@@ -34,22 +34,22 @@ const Header = () => {
                                 </Link>
                             </li>
                             <li className="nav-item">
-                                <Link to={"/shop"} className="nav-link cool-link">
+                                <Link to={"/shop"} className="nav-link cool-link text-white">
                                     Shop
                                 </Link>
                             </li>
                             <li className="nav-item" >
-                                <HashLink to={"/home#review"} className="nav-link cool-link">
+                                <HashLink to={"/home#review"} className="nav-link cool-link text-white">
                                     Review
                                 </HashLink>
                             </li>
                             <li className="nav-item">
-                                <HashLink to={"/home#vlog"} className="nav-link cool-link">
+                                <HashLink to={"/home#vlog"} className="nav-link cool-link text-white">
                                     Vlog
                                 </HashLink>
                             </li>
                             <li className="nav-item">
-                                <HashLink to={"/home#contactUs"} className="nav-link cool-link">
+                                <HashLink to={"/home#contactUs"} className="nav-link cool-link text-white">
                                     Contact Us
                                 </HashLink>
                             </li>
@@ -57,7 +57,7 @@ const Header = () => {
                                 user.email &&
 
                                 <li className="nav-item">
-                                    <Link to={"/dashboard"} className="nav-link cool-link">
+                                    <Link to={"/dashboard"} className="nav-link cool-link text-white">
                                         Dashboard
                                     </Link>
                                 </li>
@@ -79,16 +79,16 @@ const Header = () => {
                                         </span>
                                     </Link>
                                     <ul className="dropdown-menu w-100 border-0 shadow" aria-labelledby="navbarDropdown">
-                                        <li className=" text-center">
+                                        <li className="text-center">
                                             <div className="mx-2">
                                                 <img className="user-image rounded-circle " src={photoURL} alt="..." height={80} />
                                             </div>
                                             <div>
 
                                             </div>
-                                            <div className=" fw-light text-lowercase">
+                                            <div className="fw-light text-lowercase">
                                                 <p>
-                                                    <span className="text-capitalize">
+                                                    <span className="text-capitalize ">
                                                         {displayName}
                                                     </span>
                                                     <br />
@@ -102,9 +102,9 @@ const Header = () => {
                                         </li>
 
                                         <li><hr className="dropdown-divider" /></li>
-                                        <li className="nav-item menu-bg fw-bold">
 
-                                            <Link to="/" className="nav-link " onClick={logout}>
+                                        <li className="nav-item fw-bold menu-bg">
+                                            <Link to="/" className="nav-link text-secondary " onClick={logout}>
                                                 <FontAwesomeIcon icon={faSignOutAlt} /> Logout
                                             </Link>
                                         </li>
@@ -114,7 +114,7 @@ const Header = () => {
 
                                 :
 
-                                <Link to="/login" className="nav-link cool-link">LOGIN</Link>
+                                <Link to="/login" className="nav-link cool-link text-white">LOGIN</Link>
 
 
                             }

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { useParams } from 'react-router';
+import { useHistory, useParams } from 'react-router';
 import useAuth from '../../../hooks/useAuth';
 import Loading from '../../Loading/Loading';
 import axios from 'axios';
@@ -19,6 +19,7 @@ const PlaceOrder = () => {
 
     const { register, handleSubmit, watch, reset, formState: { errors } } = useForm();
 
+    const history = useHistory();
 
     const onSubmit = data => {
         data.status = 'Pending';
@@ -43,14 +44,17 @@ const PlaceOrder = () => {
                         willClose: () => {
                             clearInterval(timerInterval)
                         }
-                    }).then((result) => {
-                        /* Read more about handling dismissals below */
-                        if (result.dismiss === Swal.DismissReason.timer) {
-                            console.log('I was closed by the timer')
-                        }
                     })
+                        .then((result) => {
+                            /* Read more about handling dismissals below */
+                            if (result.dismiss === Swal.DismissReason.timer) {
+                                history.push('/dashboard');
+                                console.log('I was closed by the timer')
+                            }
+                        })
                     reset();
                 }
+
             })
     };
 
@@ -124,7 +128,7 @@ const PlaceOrder = () => {
                                 </div>
                                 <div className="col-md-8">
                                     <div className="card-body">
-                                        <h5 className="card-title">{products?.name}</h5>
+                                        <p className="card-title fw-bold">{products?.name}</p>
                                         <p className="card-text">
                                             $ {products?.price}
                                         </p>

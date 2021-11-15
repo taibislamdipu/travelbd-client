@@ -78,6 +78,12 @@ const MyOrder = () => {
         })
     }
 
+    const getColor = (status) => {
+        if (status === 'Shipped') return 'Green';
+        if (status === 'Pending') return '#fc5e03';
+        return '';
+    };
+
 
 
     return (
@@ -122,8 +128,7 @@ const MyOrder = () => {
                                         <table className="table table-hover table-bordered">
                                             <thead className="table-dark ">
                                                 <tr className="">
-                                                    {/* <th scope="col">Name</th> */}
-                                                    {/* <th scope="col">No.</th> */}
+                                                    <th scope="col">#</th>
                                                     <th scope="col">Image</th>
                                                     <th scope="col">Name</th>
                                                     <th scope="col">Price</th>
@@ -134,15 +139,17 @@ const MyOrder = () => {
                                             </thead>
 
                                             {
-                                                myOrder.map((singleOrder) => <tbody>
+                                                myOrder.map((singleOrder, index) => <tbody>
                                                     <tr>
+                                                        <td>{index + 1}</td>
                                                         <td>
                                                             <img src={singleOrder?.image} height={100} alt="" />
                                                         </td>
                                                         <td>{singleOrder?.productName}</td>
                                                         <td>{singleOrder?.price}</td>
                                                         <td>{singleOrder?.address}</td>
-                                                        <td>{singleOrder?.status}</td>
+                                                        <td style={{ color: getColor(singleOrder?.status) }}
+                                                        >{singleOrder?.status}</td>
                                                         <td>
                                                             <button className="btn " onClick={() => handleDelete(singleOrder?._id)}>
                                                                 <FontAwesomeIcon icon={faTrashAlt} />

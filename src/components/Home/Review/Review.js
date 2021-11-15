@@ -5,6 +5,8 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import 'swiper/swiper-bundle.min.css'
 import 'swiper/swiper.min.css'
 import Loading from '../../Loading/Loading';
+import Bounce from "react-reveal/Bounce";
+
 
 const Review = () => {
 
@@ -37,8 +39,9 @@ const Review = () => {
 
     return (
         <div className="container-fluid review-section my-5 text-center" id="review">
-            <h2 className="text-center display-4 fw-bold pt-5 text-white">Customer Review</h2>
-
+            <Bounce bottom cascade>
+                <h2 className="text-center display-4 fw-bold pt-5 text-white">Customer Review</h2>
+            </Bounce>
             <div>
                 {
 

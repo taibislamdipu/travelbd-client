@@ -4,6 +4,8 @@ import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Link } from 'react-router-dom';
 import Fade from 'react-reveal/Fade';
+import Bounce from "react-reveal/Bounce";
+
 
 const SummerSale = () => {
     return (
@@ -13,9 +15,11 @@ const SummerSale = () => {
             <div className="row">
 
                 <Fade left>
-                    <div className="col-md-6 bg-info d-flex justify-content-center align-items-center summer-sale-container">
+                    <div className="col-md-6 py-3 bg-info d-flex justify-content-center align-items-center summer-sale-container">
                         <div className="text-white">
-                            <h2 className="display-2 fw-bold text-uppercase">Summer Sale</h2>
+                            <Bounce bottom cascade>
+                                <h2 className="display-2 fw-bold text-uppercase">Summer Sale</h2>
+                            </Bounce>
                             <h3>On Summer Collections</h3>
                             <p className="display-4 fw-bold">50% or more off</p>
 

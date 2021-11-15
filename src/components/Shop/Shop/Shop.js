@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Loading from '../../Loading/Loading';
+import Bounce from "react-reveal/Bounce";
 
 const Shop = () => {
 
@@ -29,7 +30,9 @@ const Shop = () => {
         <div className="container my-5">
             <div className="px-2 py-4 px-md-4 py-md-3 bg-white shadow-sm rounded">
                 <div className="my-5 text-center">
-                    <h2 className="display-4 fw-bold">Shop</h2>
+                    <Bounce bottom cascade>
+                        <h2 className="display-4 fw-bold">Shop</h2>
+                    </Bounce>
                     <p className="text-secondary">
                         Welcome to the modern and aesthetic stores of In2travels.
                         <br />

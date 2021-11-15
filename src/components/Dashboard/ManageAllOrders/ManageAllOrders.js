@@ -38,18 +38,53 @@ const ManageAllOrders = () => {
         console.log(id);
     };
 
-    const { register, handleSubmit } = useForm();
+    // const { register, handleSubmit } = useForm();
 
-    const onSubmit = (data) => {
-        console.log(data, orderId);
-        fetch(`https://fierce-lake-75301.herokuapp.com/statusUpdate/${orderId}`, {
-            method: "PUT",
-            headers: { "content-type": "application/json" },
-            body: JSON.stringify(data),
+    // const onSubmit = (data) => {
+    //     console.log(data, orderId);
+    //     fetch(`https://fierce-lake-75301.herokuapp.com/statusUpdate/${orderId}`, {
+    //         method: "PUT",
+    //         headers: { "content-type": "application/json" },
+    //         body: JSON.stringify(data),
+    //     })
+    //         .then((res) => res.json())
+    //         .then((result) => {
+    //             if (result.modifiedCount === 1) {
+    //                 let timerInterval
+    //                 Swal.fire({
+    //                     position: 'top-end',
+    //                     icon: 'success',
+    //                     title: 'Status updated successfully',
+    //                     timer: 3000,
+    //                     timerProgressBar: true,
+    //                     didOpen: () => {
+    //                         Swal.showLoading()
+    //                     },
+    //                     willClose: () => {
+    //                         clearInterval(timerInterval)
+    //                     }
+    //                 }).then((result) => {
+    //                     if (result.dismiss === Swal.DismissReason.timer) {
+    //                         console.log('I was closed by the timer')
+    //                     }
+    //                 })
+    //             }
+    //         });
+    // };
+
+    const handleUpdate = (id) => {
+        fetch(`http://localhost:5000/statusUpdate/${id}`, {
+            method: 'PUT',
+            headers: { 'content-type': 'application/json' },
+            body: JSON.stringify(allOrders)
         })
-            .then((res) => res.json())
-            .then((result) => {
-                if (result.modifiedCount === 1) {
+            .then(res => res.json())
+            .then(data => {
+                if (data.modifiedCount > 0) {
+                    // setAllOrders({})
+                    // swal("Approved!", "Order status updated!", "success");
+                    // alert("Approved!", "Order status updated");
+
                     let timerInterval
                     Swal.fire({
                         position: 'top-end',
@@ -64,14 +99,17 @@ const ManageAllOrders = () => {
                             clearInterval(timerInterval)
                         }
                     }).then((result) => {
-                        /* Read more about handling dismissals below */
                         if (result.dismiss === Swal.DismissReason.timer) {
                             console.log('I was closed by the timer')
                         }
+                        document.location.reload();
                     })
+
                 }
-            });
-    };
+
+            })
+
+    }
 
 
     const handleDelete = (id) => {
@@ -172,7 +210,7 @@ const ManageAllOrders = () => {
                                                             <p>Phone: {singleOrder?.phone}</p>
                                                         </td>
 
-                                                        <td>
+                                                        {/* <td>
                                                             <form onSubmit={handleSubmit(onSubmit)}>
                                                                 <select
                                                                     onClick={() => handleOrderId(singleOrder?._id)}
@@ -182,10 +220,17 @@ const ManageAllOrders = () => {
                                                                     <option value="Approved">Approved</option>
                                                                     <option value="Shipped">Shipped</option>
                                                                 </select>
-                                                                {/* <input type="submit" /> */}
+
                                                                 <button type="submit" className="btn custom-black-btn mt-3">Submit</button>
                                                             </form>
+                                                        </td> */}
+
+                                                        <td>
+                                                            <button
+                                                                className="btn btn-primary" onClick={() => handleUpdate(singleOrder?._id)}>{singleOrder.status}
+                                                            </button>
                                                         </td>
+
                                                         <td>
                                                             <button className="btn " onClick={() => handleDelete(singleOrder?._id)}>
                                                                 <FontAwesomeIcon icon={faTrashAlt} />

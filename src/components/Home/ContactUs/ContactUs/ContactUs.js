@@ -4,6 +4,8 @@ import { faPhoneAlt, faMobileAlt, faFax, faEnvelope } from '@fortawesome/free-so
 import MyForm from '../MyForm/MyForm';
 import GoogleMap from '../GoogleMap/GoogleMap';
 import Fade from 'react-reveal/Fade';
+import Bounce from "react-reveal/Bounce";
+
 
 const ContactUs = () => {
 
@@ -14,7 +16,9 @@ const ContactUs = () => {
                 <div className="d-flex flex-column page-title-container justify-content-center align-items-center" >
                     <Fade top>
                         <div className="text-center my-5">
-                            <h2 className="fw-bold page-title display-4 fw-bold text-uppercase ">Need custom t-shirt?</h2>
+                            <Bounce bottom cascade>
+                                <h2 className="fw-bold page-title display-4 fw-bold text-uppercase ">Need custom t-shirt?</h2>
+                            </Bounce>
                             <p>Please feel free to contact us. We will get back to you as soon as possible.</p>
                         </div>
                     </Fade>
