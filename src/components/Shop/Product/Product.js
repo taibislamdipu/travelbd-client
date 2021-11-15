@@ -67,11 +67,12 @@ const Product = () => {
                             </Bounce>
 
                             <div className="col-md-6 ">
-                                <Fade >
+                                {/* <Fade >
                                     <div>
                                         <img src={products?.image} className="img-fluid" alt="" />
                                     </div>
-                                </Fade>
+                                </Fade> */}
+                                <zoom-hover image={products?.image} height="600"> </zoom-hover>
                             </div>
                             <div className="col-md-6 mt-5">
                                 <Fade >

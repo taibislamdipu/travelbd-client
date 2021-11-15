@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './Login.css';
 import { useHistory, useLocation } from 'react-router';
 import useAuth from '../../../hooks/useAuth';
-import logo from '../../../images/logo.png';
+import logo from '../../../images/logoBlack.png';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAngleDoubleUp } from '@fortawesome/free-solid-svg-icons'
