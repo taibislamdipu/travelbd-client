@@ -39,20 +39,22 @@ const MakeAdmin = () => {
                         /* Read more about handling dismissals below */
                         if (result.dismiss === Swal.DismissReason.timer) {
                             console.log('I was closed by the timer', result)
-                            Swal.fire({
-                                icon: 'error',
-                                title: 'Oops...',
-                                text: 'Something went wrong!'
-                            })
+                            // Swal.fire({
+                            //     icon: 'error',
+                            //     title: 'Oops...',
+                            //     text: 'Something went wrong!'
+                            // })
                         }
                     })
-                } else if (data.modifiedCount === 0) {
+                }
+                if (data.modifiedCount === 0) {
                     Swal.fire({
                         icon: 'error',
                         title: 'Oops...',
-                        text: 'Email is not registered in the database!'
+                        text: 'Something went wrong!'
                     })
                 }
+
             })
 
 

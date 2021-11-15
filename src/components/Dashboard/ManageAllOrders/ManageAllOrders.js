@@ -73,7 +73,7 @@ const ManageAllOrders = () => {
     // };
 
     const handleUpdate = (id) => {
-        fetch(`http://localhost:5000/statusUpdate/${id}`, {
+        fetch(`https://fierce-lake-75301.herokuapp.com/statusUpdate/${id}`, {
             method: 'PUT',
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify(allOrders)
