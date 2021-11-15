@@ -62,7 +62,7 @@ const AddReview = () => {
                                 <textarea className="form-control"
                                     rows="3"
                                     name="review"
-                                    maxLength="250"
+                                    maxLength="120"
                                     {...register("review")}
                                     placeholder="Review"
                                     required

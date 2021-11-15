@@ -42,7 +42,7 @@ const MakeAdmin = () => {
                             // Swal.fire({
                             //     icon: 'error',
                             //     title: 'Oops...',
-                            //     text: 'Something went wrong!'
+                            //     text: 'User is not registered!'
                             // })
                         }
                     })

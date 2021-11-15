@@ -225,11 +225,20 @@ const ManageAllOrders = () => {
                                                             </form>
                                                         </td> */}
 
-                                                        <td>
-                                                            <button
-                                                                className="btn btn-primary" onClick={() => handleUpdate(singleOrder?._id)}>{singleOrder.status}
-                                                            </button>
-                                                        </td>
+                                                        {singleOrder.status === "Shipped" ?
+                                                            <td>
+                                                                <button
+                                                                    className="btn btn-success" onClick={() => handleUpdate(singleOrder?._id)}>{singleOrder.status}
+                                                                </button>
+                                                            </td>
+                                                            :
+
+                                                            <td>
+                                                                <button
+                                                                    className="btn btn-warning" onClick={() => handleUpdate(singleOrder?._id)}>{singleOrder.status}
+                                                                </button>
+                                                            </td>
+                                                        }
 
                                                         <td>
                                                             <button className="btn " onClick={() => handleDelete(singleOrder?._id)}>

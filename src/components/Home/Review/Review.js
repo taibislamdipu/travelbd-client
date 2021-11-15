@@ -51,39 +51,91 @@ const Review = () => {
 
                         :
 
+                        // <Swiper
+                        //     spaceBetween={50}
+                        //     slidesPerView={2}
+                        //     centeredSlides
+                        //     onSlideChange={() => console.log("slide change")}
+                        //     onSwiper={swiper => console.log(swiper)}
+                        // >
+                        //     {
+                        //         userReview.map(review => <SwiperSlide>
+
+                        //             <div className="">
+                        //                 <img src={review?.photoURL} className="mt-5 text-center review-img rounded-circle" alt="" />
+                        //                 <div className="shadow-sm  bg-white rounded py-5 review-container">
+                        //                     <h6 className="fw-bold">{review?.name}</h6>
+                        //                     <div className="star-rating">
+                        //                         <Rating
+                        //                             initialRating={review?.rating}
+                        //                             emptySymbol="far fa-star"
+                        //                             fullSymbol="fas fa-star"
+                        //                             readonly
+                        //                         />
+                        //                     </div>
+                        //                     <p className="fs-5 px-4 review">
+                        //                         <small>
+                        //                             {review?.review}
+                        //                         </small>
+                        //                     </p>
+                        //                 </div>
+                        //             </div>
+
+                        //         </SwiperSlide>
+                        //         )
+                        //     }
+                        // </Swiper>
+
+
                         <Swiper
-                            spaceBetween={50}
-                            slidesPerView={2}
-                            centeredSlides
-                            onSlideChange={() => console.log("slide change")}
-                            onSwiper={swiper => console.log(swiper)}
+                            loop={true}
+                            slidesPerView={1}
+                            breakpoints={{
+                                640: {
+                                    slidesPerView: 1,
+                                    spaceBetween: 2,
+                                },
+                                768: {
+                                    slidesPerView: 2,
+                                    spaceBetween: 10,
+                                },
+                                1024: {
+                                    slidesPerView: 3,
+                                    spaceBetween: 10,
+                                },
+                            }}
+                            autoplay={{
+                                delay: 2500,
+                                disableOnInteraction: false,
+                            }}
+                            spaceBetween={10}
                         >
-                            {
-                                userReview.map(review => <SwiperSlide>
-
-                                    <div className="">
-                                        <img src={review?.photoURL} className="mt-5 text-center review-img rounded-circle" alt="" />
-                                        <div className="shadow-sm  bg-white rounded py-5 review-container">
-                                            <h6 className="fw-bold">{review?.name}</h6>
-                                            <div className="star-rating">
-                                                <Rating
-                                                    initialRating={review?.rating}
-                                                    emptySymbol="far fa-star"
-                                                    fullSymbol="fas fa-star"
-                                                    readonly
-                                                />
+                            {userReview.map((review) => {
+                                return (
+                                    <SwiperSlide key={review._id}>
+                                        <div className="">
+                                            <img src={review?.photoURL} className="mt-5 text-center review-img rounded-circle" alt="" />
+                                            <div className="shadow-sm  bg-white rounded py-5 review-container">
+                                                <h6 className="fw-bold">{review?.name}</h6>
+                                                <div className="star-rating">
+                                                    <Rating
+                                                        initialRating={review?.rating}
+                                                        emptySymbol="far fa-star"
+                                                        fullSymbol="fas fa-star"
+                                                        readonly
+                                                    />
+                                                </div>
+                                                <p className="fs-5 px-4 review">
+                                                    <small>
+                                                        {review?.review.slice(0, 120)}
+                                                    </small>
+                                                </p>
                                             </div>
-                                            <p className="fs-5 px-4 review">
-                                                <small>
-                                                    {review?.review}
-                                                </small>
-                                            </p>
                                         </div>
-                                    </div>
+                                    </SwiperSlide>
+                                );
+                            })}
 
-                                </SwiperSlide>
-                                )
-                            }
                         </Swiper>
                 }
 
