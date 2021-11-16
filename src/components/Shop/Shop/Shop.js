@@ -4,6 +4,8 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Loading from '../../Loading/Loading';
 import Bounce from "react-reveal/Bounce";
+import Zoom from 'react-reveal/Zoom';
+
 
 const Shop = () => {
 
@@ -50,27 +52,28 @@ const Shop = () => {
                         :
 
                         <div className="row row-cols-1 row-cols-md-3 g-4">
-
-                            {
-                                products.map(pd => <div className="col">
-                                    <Link to={`/product/${pd?._id}`} className="react-hook-link">
-                                        <div className="card border-0 h-100 product">
-                                            <img src={pd?.image} className="card-img-top" alt="..." />
-                                            <div className="card-body">
-                                                <p className="card-title fw-bold">{pd?.name}</p>
-                                                <p className="item-price ">
-                                                    <small>$ {pd?.price}</small>
-                                                </p>
-                                                <div className="">
-                                                    <button className="btn custom-black-btn buy-now-btn">
-                                                        <FontAwesomeIcon icon={faShoppingCart} /> Buy Now
-                                                    </button>
+                            <Zoom>
+                                {
+                                    products.map(pd => <div className="col">
+                                        <Link to={`/product/${pd?._id}`} className="react-hook-link">
+                                            <div className="card border-0 h-100 product">
+                                                <img src={pd?.image} className="card-img-top" alt="..." />
+                                                <div className="card-body">
+                                                    <p className="card-title fw-bold">{pd?.name}</p>
+                                                    <p className="item-price ">
+                                                        <small>$ {pd?.price}</small>
+                                                    </p>
+                                                    <div className="">
+                                                        <button className="btn custom-black-btn buy-now-btn">
+                                                            <FontAwesomeIcon icon={faShoppingCart} /> Buy Now
+                                                        </button>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                    </Link>
-                                </div>)
-                            }
+                                        </Link>
+                                    </div>)
+                                }
+                            </Zoom>
 
 
                         </div>

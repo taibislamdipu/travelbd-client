@@ -6,6 +6,8 @@ import { Link } from 'react-router-dom';
 import Loading from '../../Loading/Loading';
 import Fade from 'react-reveal/Fade';
 import Bounce from "react-reveal/Bounce";
+import Zoom from 'react-reveal/Zoom';
+
 
 const Latest = () => {
 
@@ -57,7 +59,8 @@ const Latest = () => {
 
                                     :
                                     <div className="row row-cols-1 row-cols-md-3 g-4">
-                                        <Fade bottom>
+                                        {/* <Fade bottom> */}
+                                        <Zoom>
 
                                             {
                                                 products.map(pd => <div className="col">
@@ -90,8 +93,8 @@ const Latest = () => {
                                                 </div>
                                                 )
                                             }
-
-                                        </Fade>
+                                        </Zoom>
+                                        {/* </Fade> */}
                                     </div>
                             }
 
