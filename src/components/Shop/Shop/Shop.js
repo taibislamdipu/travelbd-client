@@ -58,7 +58,9 @@ const Shop = () => {
                                             <img src={pd?.image} className="card-img-top" alt="..." />
                                             <div className="card-body">
                                                 <p className="card-title fw-bold">{pd?.name}</p>
-                                                <p className="item-price fw-bold">${pd?.price}</p>
+                                                <p className="item-price ">
+                                                    <small>$ {pd?.price}</small>
+                                                </p>
                                                 <div className="">
                                                     <button className="btn custom-black-btn buy-now-btn">
                                                         <FontAwesomeIcon icon={faShoppingCart} /> Buy Now

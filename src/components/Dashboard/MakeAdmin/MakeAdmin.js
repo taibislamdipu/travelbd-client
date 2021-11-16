@@ -88,7 +88,7 @@ const MakeAdmin = () => {
                     </div>
 
                     <div className="col-md-6">
-                        <p className="fw-bold">How to make a new admin</p>
+                        <p className="fw-bold">How to make a new admin?</p>
                         <p>
                             Input any existing user email address of this website to create a new admin. Only an admin can create a new admin.
                         </p>

@@ -120,7 +120,7 @@ const ManageProducts = () => {
                                                         <td>{product?.price}</td>
                                                         <td>{product?.description.slice(0, 30)}...</td>
                                                         <td>
-                                                            <button className="btn " onClick={() => handleDelete(product?._id)}>
+                                                            <button className="btn disabled" title="Delete" onClick={() => handleDelete(product?._id)}>
                                                                 <FontAwesomeIcon icon={faTrashAlt} />
                                                             </button>
                                                         </td>

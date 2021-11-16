@@ -241,7 +241,7 @@ const ManageAllOrders = () => {
                                                         }
 
                                                         <td>
-                                                            <button className="btn " onClick={() => handleDelete(singleOrder?._id)}>
+                                                            <button className="btn disabled" onClick={() => handleDelete(singleOrder?._id)}>
                                                                 <FontAwesomeIcon icon={faTrashAlt} />
                                                             </button>
                                                         </td>
