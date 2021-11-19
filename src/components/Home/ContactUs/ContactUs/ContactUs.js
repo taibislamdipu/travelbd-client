@@ -12,7 +12,7 @@ const ContactUs = () => {
 
     return (
         <div className="container my-5" id="contactUs">
-            <div className="px-2 py-4 px-md-4 py-md-3 bg-white shadow-sm rounded">
+            <div className="px-2 py-4 px-md-4 py-md-3 bg-white shadow rounded">
                 <div className="d-flex flex-column page-title-container justify-content-center align-items-center" >
                     <Fade top>
                         <div className="text-center my-5">

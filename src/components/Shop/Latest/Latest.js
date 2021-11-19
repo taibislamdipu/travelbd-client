@@ -37,7 +37,7 @@ const Latest = () => {
 
     return (
         <div className="container my-5">
-            <div className="px-2 py-4 px-md-4 py-md-3 bg-white shadow-sm rounded">
+            <div className="px-2 py-4 px-md-4 py-md-3 bg-white shadow rounded">
                 <Bounce bottom cascade>
                     <h2 className="text-center my-5 display-4 fw-bold">Recommend for you</h2>
                 </Bounce>
@@ -65,7 +65,7 @@ const Latest = () => {
                                             {
                                                 products.map(pd => <div className="col">
                                                     <Link to={`/product/${pd?._id}`} className="react-hook-link ">
-                                                        <div className="card border-0 h-100 product">
+                                                        <div className="card border- h-100 product">
                                                             {
                                                                 !pd?.image ?
                                                                     <Loading></Loading>
@@ -95,8 +95,14 @@ const Latest = () => {
                                             }
                                         </Zoom>
                                         {/* </Fade> */}
+
                                     </div>
                             }
+                            <div className="pt-5 text-center">
+                                <Link to="/shop">
+                                    <button className="btn custom-black-btn">See All</button>
+                                </Link>
+                            </div>
 
 
                         </div>

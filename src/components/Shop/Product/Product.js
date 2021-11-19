@@ -48,7 +48,7 @@ const Product = () => {
 
     return (
         <div className="container my-5">
-            <div className="px-2 py-4 px-md-4 py-md-3 bg-white shadow-sm rounded">
+            <div className="px-2 py-4 px-md-4 py-md-3 bg-white shadow rounded">
                 {
 
                     isLoading ?
@@ -124,7 +124,7 @@ const Product = () => {
             </div>
 
             {/* t-shirt table */}
-            <div className="mt-5 px-2 py-4 px-md-4 py-md-3 bg-white shadow-sm rounded ">
+            <div className="mt-5 px-2 py-4 px-md-4 py-md-3 bg-white shadow rounded ">
                 <p className="mt-2 fw-bold text-center">
                     How to measure your T-Shirt size?
                 </p>

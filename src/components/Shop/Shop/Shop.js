@@ -32,7 +32,7 @@ const Shop = () => {
 
     return (
         <div className="container my-5">
-            <div className="px-2 py-4 px-md-4 py-md-3 bg-white shadow-sm rounded">
+            <div className="px-2 py-4 px-md-4 py-md-3 bg-white shadow rounded">
                 <div className="my-5 text-center">
                     <Bounce bottom cascade>
                         <h2 className="display-4 fw-bold">Shop</h2>
@@ -51,12 +51,12 @@ const Shop = () => {
 
                         :
 
-                        <div className="row row-cols-1 row-cols-md-3 g-4">
+                        <div className="row row-cols-1 row-cols-md-3 g-4 pb-5">
                             <Zoom>
                                 {
                                     products.map(pd => <div className="col">
                                         <Link to={`/product/${pd?._id}`} className="react-hook-link">
-                                            <div className="card border-0 h-100 product">
+                                            <div className="card border- h-100 product">
                                                 <img src={pd?.image} className="card-img-top" alt="..." />
                                                 <div className="card-body">
                                                     <p className="card-title fw-bold">{pd?.name}</p>

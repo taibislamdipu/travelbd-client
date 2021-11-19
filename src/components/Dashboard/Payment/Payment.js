@@ -2,8 +2,8 @@ import React from 'react';
 
 const Payment = () => {
     return (
-        <div className="container px-0 " >
-            <div className="px-2 py-4 px-md-4 py-md-3 bg-white shadow-sm rounded">
+        <div className="container px-" >
+            <div className="px-2 py-4 px-md-4 py-md-3 bg-white shadow rounded">
                 <p className="mt-2 fw-bold">Payment</p>
                 <hr />
                 <div>

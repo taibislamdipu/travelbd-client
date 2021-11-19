@@ -4,7 +4,15 @@
 
 body{
   font-family: 'Open Sans', sans-serif;
-  background-color: #F2F3F8;
+  /* background-color: #F2F3F8; */
+}
+
+.rounded{
+  border-radius: 10px !important;
+}
+
+.shadow{
+  box-shadow: 0 4px 20px rgb(0 0 0 / 10%) !important;
 }
 
 .custom-black-btn{

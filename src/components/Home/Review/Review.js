@@ -38,11 +38,11 @@ const Review = () => {
 
 
     return (
-        <div className="container-fluid review-section my-5 text-center" id="review">
+        <div className="container-fluid text-center px-0" id="review">
             <Bounce bottom cascade>
-                <h2 className="text-center display-4 fw-bold pt-5 text-white">Customer Review</h2>
+                <h2 className="text-center display-4 fw-bold my-5 ">Customer Review</h2>
             </Bounce>
-            <div>
+            <div className="review-section">
                 {
 
                     isLoading ?
@@ -63,7 +63,7 @@ const Review = () => {
 
                         //             <div className="">
                         //                 <img src={review?.photoURL} className="mt-5 text-center review-img rounded-circle" alt="" />
-                        //                 <div className="shadow-sm  bg-white rounded py-5 review-container">
+                        //                 <div className="shadow  bg-white rounded py-5 review-container">
                         //                     <h6 className="fw-bold">{review?.name}</h6>
                         //                     <div className="star-rating">
                         //                         <Rating
@@ -113,9 +113,9 @@ const Review = () => {
                             {userReview.map((review) => {
                                 return (
                                     <SwiperSlide key={review._id}>
-                                        <div className="">
+                                        <div className="mx-3">
                                             <img src={review?.photoURL} className="mt-5 text-center review-img rounded-circle" alt="" />
-                                            <div className="shadow-sm  bg-white rounded py-5 review-container">
+                                            <div className="shadow  bg-white rounded py-5 review-container">
                                                 <h6 className="fw-bold">{review?.name}</h6>
                                                 <div className="star-rating">
                                                     <Rating

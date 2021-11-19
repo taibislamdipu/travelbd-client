@@ -78,7 +78,7 @@ const PlaceOrder = () => {
 
     return (
         <div className="container my-5">
-            <div className="px-2 py-4 px-md-4 py-md-3 bg-white shadow-sm rounded ">
+            <div className="px-2 py-4 px-md-4 py-md-3 bg-white shadow rounded ">
                 <div className="row pb-5">
                     <div className="col-md-6 border-end">
                         <p className="fw-bold">Shopping Cart</p>

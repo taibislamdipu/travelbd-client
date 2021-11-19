@@ -196,11 +196,11 @@ const Login = () => {
 
 
     return (
-        <div className="container-fluid login-page py-5">
+        <div className="container-fluid py-5 login-page">
 
             <div className="row d-flex flex-column justify-content-center align-items-center">
                 <div className="col-md-6">
-                    <form className="login-form bg-white pb-5 pt-3 px-5 border" onSubmit={handleRegistration} >
+                    <form className="login-form bg-white pb-5 pt-3 px-5 rounded shadow" onSubmit={handleRegistration} >
 
                         <div className="text-center">
                             <img src={logo} alt="" />
@@ -261,7 +261,7 @@ const Login = () => {
                             <FontAwesomeIcon icon={faAngleDoubleUp} />
                         </div>
                         <div>
-                            <p className=" text-secondary ">
+                            <p className=" fw-fold ">
                                 We don't store any of your account information.
                                 <br />
                                 You can create your own personal account by clicking <span className="fw-bold">Register</span> or Sign in with Google.

@@ -31,7 +31,7 @@ const Dashboard = () => {
         <div className="container-fluid">
             <div className="container my-4">
                 <div className="row ">
-                    <div className="col-md-3  h-100 bg-white shadow-sm mb-3 rounded sticky-md-top">
+                    <div className="col-md-3  h-100 bg-white shadow mb-3 rounded sticky-md-top">
                         <div className="dashboard-sidebar ">
                             <p className="text-center mt-4 fw-bold">Dashboard</p>
                             <hr />

@@ -71,7 +71,8 @@ const ManageProducts = () => {
 
     return (
         <div className="container">
-            <div className="px-2 py-4 px-md-4 py-md-3 bg-white shadow-sm rounded">
+            <div className="px-2 py-4 px-md-4 py-md-3 bg-white shadow rounded">
+
                 <p className="mt-2 fw-bold">Manage Products: {allProducts.length} </p>
                 <hr />
                 <div className="table-responsive">

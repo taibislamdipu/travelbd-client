@@ -10,3 +10,14 @@
 .error{
     color: red;
 }
+
+.login-page{
+   
+    background-image:
+    linear-gradient(to bottom, rgba(245, 246, 252, 0.774), rgba(255, 255, 255, 0.73)),
+    url('../../../images/loginBg2.jpg');
+    background-size: cover;
+    
+}
+
+

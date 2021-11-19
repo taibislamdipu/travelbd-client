@@ -16,7 +16,7 @@ const Vlog = () => {
 
                 <Fade left>
                     <div class="col">
-                        <div class="card h-100 border-0 shadow-sm rounded">
+                        <div class="card h-100 border-0 shadow rounded">
                             <iframe style={{ height: 200 }} title="video" src="https://www.youtube.com/embed/G0_JNPrhOpQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                             <div class="card-body">
                                 <h5 class="card-title fw-bold">Mostofa Sarwar Farooki & Banglar Gonji</h5>
@@ -32,7 +32,7 @@ const Vlog = () => {
 
                 <Fade bottom>
                     <div class="col">
-                        <div class="card h-100 border-0 shadow-sm rounded">
+                        <div class="card h-100 border-0 shadow rounded">
                             <iframe style={{ height: 200 }} title="video2" src="https://www.youtube.com/embed/3NS8MKQNIIE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                             <div class="card-body">
                                 <h5 class="card-title fw-bold">Dam Diye Kinechi Bangla</h5>
@@ -46,7 +46,7 @@ const Vlog = () => {
 
                 <Fade right>
                     <div class="col">
-                        <div class="card h-100 border-0 shadow-sm rounded">
+                        <div class="card h-100 border-0 shadow rounded">
                             <iframe style={{ height: 200 }} title="video3" src="https://www.youtube.com/embed/WErZpDhIAUk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                             <div class="card-body">
                                 <h5 class="card-title fw-bold">
