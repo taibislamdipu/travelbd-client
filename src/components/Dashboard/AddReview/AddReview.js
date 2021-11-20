@@ -9,6 +9,7 @@ const AddReview = () => {
 
     const { user } = useAuth();
     const { displayName, email } = user;
+    const [confirmMessage, setConfirmMessage] = useState(true);
 
     const [rating, setRating] = useState(0);
 
@@ -21,12 +22,12 @@ const AddReview = () => {
         axios.post('https://fierce-lake-75301.herokuapp.com/addReview', data)
             .then(res => {
                 if (res.data.insertedId) {
-
+                    setConfirmMessage(false);
                     let timerInterval
                     Swal.fire({
                         position: 'top-end',
                         icon: 'success',
-                        title: 'Thanks for your feedback!',
+                        title: 'Thank you for your valuable feedback',
                         timer: 5000,
                         timerProgressBar: true,
                         didOpen: () => {
@@ -99,7 +100,7 @@ const AddReview = () => {
                                     <div className="d-inline">
                                         <small style={{ fontSize: 15 }}>
                                             <p className="d-inline me-5">Bad</p>
-                                            <p className="d-inline">Very Good</p>
+                                            <p className="d-inline">Good</p>
                                         </small>
                                     </div>
 
@@ -113,12 +114,19 @@ const AddReview = () => {
 
                         </form>
                     </div>
+
                     <div className="col-md-6">
                         <p>
                             Your email address will not be published.
                             <br />
                             After submit, your review will be show on home page.
                         </p>
+                    </div>
+
+                    <div className="mt-4">
+                        {!confirmMessage &&
+                            <p className="text-success fw-bold">Thank you for your valuable feedback</p>
+                        }
                     </div>
                 </div>
             </div>
