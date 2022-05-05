@@ -21,10 +21,10 @@ const Footer = () => {
                                         <FontAwesomeIcon icon={faMapMarkerAlt} /> Dhaka, Bangladesh, 1206.
                                     </p>
                                     <p>
-                                        <FontAwesomeIcon icon={faPhoneAlt} /> 01743-389153 (10AM-5PM)
+                                        <FontAwesomeIcon icon={faPhoneAlt} /> XXXXX-XXXXXX (10AM-5PM)
                                     </p>
                                     <p>
-                                        <FontAwesomeIcon icon={faEnvelope} /> in2travel87@gmail.com
+                                        <FontAwesomeIcon icon={faEnvelope} /> admin@admin.com
                                     </p>
                                     <div className="my-5">
                                         <img src="https://i.ibb.co/2tWssgC/google-play.png" alt="" />

@@ -30,10 +30,10 @@ const ContactUs = () => {
                             <div className="col-md-6">
                                 <div className="text-dark">
                                     <h3>IN2TRAVEL.INC</h3>
-                                    <p><FontAwesomeIcon icon={faPhoneAlt} /> 01952-777999</p>
-                                    <p><FontAwesomeIcon icon={faMobileAlt} /> 0777 909 6223</p>
-                                    <p><FontAwesomeIcon icon={faFax} /> 0208 390 6311</p>
-                                    <p><FontAwesomeIcon icon={faEnvelope} /> E-Mail: in2travel87@gmail.com</p>
+                                    <p><FontAwesomeIcon icon={faPhoneAlt} /> XXXXX-XXXXXX</p>
+                                    <p><FontAwesomeIcon icon={faMobileAlt} /> XXXXX-XXXXXX</p>
+                                    <p><FontAwesomeIcon icon={faFax} /> XXXX XXX XXXX</p>
+                                    <p><FontAwesomeIcon icon={faEnvelope} /> E-Mail: admin@admin.com</p>
                                     <hr />
                                 </div>
 
