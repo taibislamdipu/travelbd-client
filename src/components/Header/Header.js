@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { HashLink } from 'react-router-hash-link';
 import { Link } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
-import logo from '../../images/logo3.png';
+import logo from '../../images/favicon.jpg';
 
 const Header = () => {
 
@@ -20,7 +20,7 @@ const Header = () => {
                 <div className="container">
                     <Link to={'/'} className="navbar-brand">
                         <div>
-                            <img src={logo} alt="..." />
+                            <img src={logo} width="50" alt="..." />
                         </div>
                     </Link>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">

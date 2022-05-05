@@ -1,4 +1,4 @@
-# IN2 TRAVEL T-Shirt Ltd.
+# INTRAVEL T-Shirt Ltd.
 
 
 Travel T-Shirt MERN Stack website build with React.js along with CRUD and Dashboard functionalities. Google Firebase has been used for user authentication and hosting. For database i have use MongoDB here. Node.js is used in backend.

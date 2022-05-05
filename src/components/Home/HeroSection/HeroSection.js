@@ -23,7 +23,7 @@ const HeroSection = () => {
                             </Fade>
                             <Fade left>
                                 <p>
-                                    Get a faster travel T-Shirt on every tour, hiking or surfing, for any travel activities. In2 Travel delivers innovative travel products, experiences, and services to inspire travelers around the world.
+                                    Get a faster travel T-Shirt on every tour, hiking or surfing, for any travel activities. InTravel delivers innovative travel products, experiences, and services to inspire travelers around the world.
                                 </p>
                             </Fade>
                             <Link to="/shop" >
