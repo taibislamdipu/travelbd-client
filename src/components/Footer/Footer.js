@@ -16,7 +16,7 @@ const Footer = () => {
                         <div className="row">
                             <div className="col-lg-3 col-sm-6">
                                 <div className="address">
-                                    <h3 className="text-uppercase fw-bold text-white">in2travel.inc</h3>
+                                    <h3 className="text-uppercase fw-bold text-white">TRAVEL T-SHIRT</h3>
                                     <p className="mb-4 mt-4">
                                         <FontAwesomeIcon icon={faMapMarkerAlt} /> Dhaka, Bangladesh, 1206.
                                     </p>
@@ -75,9 +75,9 @@ const Footer = () => {
                         <div className="row">
                             <div className="col-12">
                                 <p >
-                                    Copyright &copy; <span id="currentYear"></span> Yellow Devs | Site designed by <a
-                                        href="https://yellow-devs.netlify.app/" target="_blank" rel="noreferrer" title="Yellow Devs Website">
-                                        <span className="text-white"  >Yellow Devs</span></a>
+                                    Copyright &copy; <span id="currentYear"></span> Dipu | Site designed by <a
+                                        href="https://taibislamdipu.netlify.app/" target="_blank" rel="noreferrer" title="Taib Portfolio">
+                                        <span className="text-white">Taib Islam Dipu</span></a>
                                 </p>
                             </div>
                         </div>

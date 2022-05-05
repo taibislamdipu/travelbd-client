@@ -29,7 +29,7 @@ const ContactUs = () => {
                         <Fade left>
                             <div className="col-md-6">
                                 <div className="text-dark">
-                                    <h3>IN2TRAVEL.INC</h3>
+                                    <h3>TRAVEL T-SHIRT</h3>
                                     <p><FontAwesomeIcon icon={faPhoneAlt} /> XXXXX-XXXXXX</p>
                                     <p><FontAwesomeIcon icon={faMobileAlt} /> XXXXX-XXXXXX</p>
                                     <p><FontAwesomeIcon icon={faFax} /> XXXX XXX XXXX</p>
