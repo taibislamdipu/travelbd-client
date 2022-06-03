@@ -1,52 +1,48 @@
-
-
 /* all global style */
 
-body{
-  font-family: 'Open Sans', sans-serif;
+body {
+  font-family: "Open Sans", sans-serif;
   /* background-color: #F2F3F8; */
 }
 
-.rounded{
+.rounded {
   border-radius: 10px !important;
 }
 
-.shadow{
+.shadow {
   box-shadow: 0 4px 20px rgb(0 0 0 / 10%) !important;
 }
 
-.custom-black-btn{
+.custom-black-btn {
   background-color: black;
   color: white;
 }
 
-.custom-black-btn:hover{
-  background-color: rgba(0, 0, 0, 0.800);
+.custom-black-btn:hover {
+  background-color: rgba(0, 0, 0, 0.8);
   color: white;
 }
 
-.react-hook-link{
+.react-hook-link {
   text-decoration: none;
   color: black;
 }
-.react-hook-link:hover .card-title{
+.react-hook-link:hover .card-title {
   text-decoration: underline;
   color: #424242;
-
 }
-.react-hook-link:hover .item-price{
+.react-hook-link:hover .item-price {
   color: black;
 }
 
-.react-hook-link:hover{
+.react-hook-link:hover {
   color: black;
 }
 
-.product:hover img{
-  opacity: .8;
+.product:hover img {
+  opacity: 0.8;
 }
 
-.product img{
-  transition: 0.3s
+.product img {
+  transition: 0.3s;
 }
-

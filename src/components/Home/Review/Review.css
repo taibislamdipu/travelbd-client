@@ -1,26 +1,17 @@
+/* .review-section {
+  background: url(../../../images/reviewbg2.jpg) no-repeat center center fixed;
+  background-size: cover;
+  height: 600px;
+} */
 
-
-
-.review-section{
-    background: url(../../../images/reviewbg2.jpg) no-repeat center center fixed;
-    background-size: cover;
-    height: 600px;
-    
-    
+.star-rating {
+  color: #f8b712;
 }
 
-.star-rating{
-    color: #F8B712;
+.review {
+  text-align: justify;
 }
 
-
-
-
-.review{
-    text-align: justify; 
+.review-img {
+  margin: -50px;
 }
-
-.review-img{
-    margin: -50px;
-}
-
